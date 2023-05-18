@@ -1,0 +1,1203 @@
+<!-- 
+	수정할 것
+	-메인페이지-
+	1. 전체보기(O)
+	2. 3depth 유지
+	3. 3depth 선 만들기(O)
+	4. 메인 배너 크기^
+	5. 메인 배너 글씨 애니메이션^
+	6. 보도자료 사진 크기(flex)
+	7. 서금원 소식 현재 페이지
+	9. 유튜브, 카드뉴스 슬라이드 dot 꾸미기
+	10. 유튜브 카드뉴스 정지버튼
+
+ -->
+
+<!DOCTYPE HTML>
+<html lang='ko'>
+
+<head>
+	<title>서민금융진흥원</title>
+	<meta charset='utf-8'>
+	<meta name='Viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.6'>
+	<meta name='Title' content='서민금융진흥원'>
+	<meta name='Subject' content='clon coding'>
+	<meta name='Keywords' content='서민금융진흥원, 금융, 생활안정자금'>
+	<meta name='Author' content='seongho'>
+	<meta name='Publisher' content='seongho'>
+	<meta name='Description' content='서민금융진흥원'>
+	<meta name='Author-Date' content='20230426'>
+	<meta name='Robots' content='index,follow'>
+
+
+	<link rel='stylesheet' href='css/reset.css'>
+	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+	<link rel='stylesheet' href='css/style.css'>
+	<link rel="icon" href="./img/logo/product-logo.png">
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+		integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div id="skip">
+		<p>바로가기 메뉴</p>
+		<ul>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#main-renew">본문 바로가기</a></li>
+		</ul>
+	</div>
+
+	<div id="wrap" class="main-wrap">
+		<header id="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="align_items_center">
+						<span class="logo"><a href="index.html"><img src="./img/logo/logo_new.png"
+									alt="logo"></a></span>
+						<ul class="header_top_right">
+							<li class="eng_center">
+								<a href="#" title="새창으로 열림" target="_blank" class="eng">ENG</a>
+								<a href="#" title="인증센터" target="_blank" class="btn_yellow">인증센터</a>
+							</li>
+							<li class="all_menu">
+								<label for="allMenuCheck" class="allmenu_btn">
+									<input type="checkbox" id="allMenuCheck">
+									<div class="allmenu_icon">
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+									<p class="state">전체보기</p>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="plus_menu">
+					<div class="container">
+						<ul class="plus_menu_ul">
+							<li class="dep1"><a href="./sub/financial_instruments.html" title="금융상품" target="_blank">금융상품</a>
+								<ul class="dep_height">
+									<li><a href="./sub/financial_instruments.html" title="서민금융 알아보기">서민금융 알아보기</a></li>
+									<li class="dep2"><a href="./sub/financial_instruments.html" title="생활안정자금">생활안정자금</a>
+										<ul>
+											<li><a href="#" title="햇살론유스">- 햇살론유스</a></li>
+											<li><a href="#" title="햇살론뱅크">- 햇살론뱅크</a></li>
+											<li><a href="#" title="햇살론카드">- 햇살론카드</a></li>
+											<li><a href="#" title="근로자햇살론">- 근로자햇살론</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="고금리대안자금">고금리대안자금</a>
+										<ul>
+											<li><a href="#" title="햇살론15">- 햇살론15</a></li>
+											<li><a href="#" title="최저신용자특례보증">- 최저신용자특례보증</a></li>
+											<li><a href="#" title="소액생계비대출">- 소액생계비대출</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="창업&middot;운영자금">창업&middot;운영자금</a>
+										<ul>
+											<li><a href="#" title="미소금융 창업&middot;운영자금">- 미소금융 <br>창업&middot;운영자금</a></li>
+											<li><a href="#" title="영세가맹점주 금리우대">- 영세가맹점주<br>금리우대</a></li>
+											<li><a href="#" title="민간사업수행기관 창업&middot;운영자금">- 민간사업수행기관<br>
+													창업&middot;운영자금</a></li>
+											<li><a href="#" title="전통시장 소액대출">- 전통시장 소액대출</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="자산형성">자산형성</a>
+										<ul>
+											<li><a href="#" title="청년희망적금">- 청년희망적금</a></li>
+											<li><a href="#" title="미소드림적금">- 미소드림적금</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="소액보험">소액보험</a></li>
+								</ul>
+							</li>
+							<li class="dep1">
+								<a href="./sub/financial_life.html" title="금융생활">금융생활</a>
+								<ul class="dep_height">
+									<li><a href="./sub/financial_life.html" title="금융교육">금융교육</a></li>
+									<li><a href="#" title="맞춤대출">맞춤대출</a></li>
+									<li><a href="#" title="휴면예금">휴면예금</a></li>
+									<li><a href="#" title="신용&middot;부채관리 컨설팅">신용&middot;부채관리 컨설팅</a></li>
+									<li><a href="#" title="자영업 컨설팅">자영업 컨설팅</a></li>
+									<li><a href="#" title="취업지원">취업지원</a></li>
+									<li><a href="#" title="채무조정제도">채무조정제도</a></li>
+									<li class="dep2"><a href="#" title="서민금융 한눈에">서민금융 한눈에</a>
+										<ul>
+											<li><a href="#" title="대출상품 한눈에">- 대출상품 한눈에</a></li>
+											<li><a href="#" title="자산형성상품 한눈에">- 자산형성상품 한눈에</a></li>
+											<li><a href="#" title="사회적금융 한눈에">- 사회적금융 한눈에</a></li>
+											<li><a href="#" title="복지 한눈에">- 복지 한눈에</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="온라인 재무진단">온라인 재무진단</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./sub/consultation_support.html" title="상담지원">상담지원</a>
+								<ul class="dep_height">
+									<li><a href="./sub/consultation_support.html" title="1397서민금융콜센터">1397서민금융<br>콜센터</a></li>
+									<li class="dep2"><a href="#" title="서민금융통합 지원센터">서민금융통합<br>지원센터</a>
+										<ul>
+											<li><a href="#" title="센터 소개">- 센터 소개</a></li>
+											<li><a href="#" title="전국센터찾기">- 전국센터찾기</a></li>
+											<li><a href="#" title="전국미소지점찾기">- 전국미소지점찾기</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="이동상담">이동상담</a></li>
+									<li><a href="#" title="자주하는 질문">자주하는 질문</a></li>
+									<li><a href="#" title="1:1문의">1:1문의</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./sub/public_participation.html" title="국민참여">국민참여</a>
+								<ul class="dep_height">
+									<li><a href="./sub/public_participation.html" title="칭찬합니다">칭찬합니다</a></li>
+									<li><a href="#" title="국민제안">국민제안</a></li>
+									<li><a href="#" title="서민금융 사칭 신고센터">서민금융 사칭 신고센터</a></li>
+									<li class="dep2"><a href="#" title="금융소비자보호">금융소비자보호</a>
+										<ul>
+											<li><a href="#" title="고객서비스 헌장">- 고객서비스 헌장</a></li>
+											<li><a href="#" title="고객서비스 이행 표준">- 고객서비스 이행 표준</a></li>
+											<li><a href="#" title="금융소비자보호 자료실">- 금융소비자보호<br>자료실</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="자료실(양식함)">자료실(양식함)</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./sub/notifications_pr.html" title="알림&middot;홍보">알림&middot;홍보</a>
+								<ul class="dep_height">
+									<li><a href="./sub/notifications_pr.html" title="공지사항">공지사항</a></li>
+									<li><a href="#" title="채용정보">채용정보</a></li>
+									<li><a href="#" title="보도자료">보도자료</a></li>
+									<li><a href="#" title="기고&middot;인터뷰">기고&middot;인터뷰</a></li>
+									<li><a href="#" title="홍보자료">홍보자료</a></li>
+									<li><a href="#" title="대국민 공모전">대국민 공모전</a></li>
+									<li><a href="#" title="서금원 TV">서금원 TV</a></li>
+									<li><a href="#" title="고마워요 서민금융">고마워요 서민금융</a></li>
+									<li><a href="#" title="카드뉴스">카드뉴스</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./sub/collaborative_business.html" title="협업사업">협업사업</a>
+								<ul class="dep_height">
+									<li><a href="./sub/collaborative_business.html" title="미소금융 재단소개">미소금융 재단소개</a></li>
+									<li><a href="#" title="미소금융 지역 법인소개">미소금융 지역 법인소개</a></li>
+									<li><a href="#" title="협업기관 소개">협업기관 소개</a></li>
+									<li><a href="#" title="금융&middot;복지 양방향서비스">금융&middot;복지 양방향서비스</a></li>
+									<li class="dep2"><a href="#" title="사회적금융 사업">사회적금융 사업</a>
+										<ul>
+											<li><a href="#" title="서금원 사회적금융 사업">- 서금원 사회적금융<br>사업</a></li>
+											<li><a href="#" title="사회적금융이란">- 사회적금융이란</a></li>
+											<li><a href="#" title="사회적금융 중개기관">- 사회적금융 중개기관</a></li>
+											<li><a href="#" title="시회적금융 우수 사례">- 시회적금융 우수 사례</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="기부자안내">기부자안내</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./sub/institution_introduction.html" title="기관소개">기관소개</a>
+								<ul class="dep_height">
+									<li class="dep2"><a href="./sub/institution_introduction.html" title="설립목적">설립목적</a>
+										<ul>
+											<li><a href="#" title="설립목적">- 설립목적</a></li>
+											<li><a href="#" title="연혁">- 연혁</a></li>
+											<li><a href="#" title="경영 전략">- 경영 전략</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="인사말">인사말</a></li>
+									<li><a href="#" title="상징&middot;캐릭터">상징&middot;캐릭터</a></li>
+									<li><a href="#" title="조직안내">조직안내</a></li>
+									<li><a href="#" title="오시는 길">오시는 길</a></li>
+									<li class="dep2"><a href="#" title="인권&middot;윤리경영">인권&middot;윤리경영</a>
+										<ul>
+											<li><a href="#" title="인권경영">- 인권경영</a></li>
+											<li><a href="#" title="윤리경영">- 윤리경영</a></li>
+											<li><a href="#" title="양성평등 임원 목표제">- 양성평등 임원 목표제</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="ESG 경영">ESG 경영</a></li>
+									<li class="dep2"><a href="#" title="클린신고센터">클린신고센터</a>
+										<ul>
+											<li><a href="#" title="클린신고센터">- 클린신고센터</a></li>
+											<li><a href="#" title="상임강사 HOT-LINE">- 상임강사 HOT-LINE</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="정보공개">정보공개</a>
+										<ul>
+											<li><a href="#" title="정보공개">- 정보공개</a></li>
+											<li><a href="#" title="공공데이터 개방">- 공공데이터 개방</a></li>
+											<li><a href="#" title="사업실명제">- 사업실명제</a></li>
+											<li><a href="#" title="사전정보 공개 목록">- 사전정보 공개 목록</a></li>
+											<li><a href="#" title="경영공시">- 경영공시</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="container">
+						<ul class="plus_menu_sitemap">
+							<li><a href="#">챗봇<img src="./img/all_menu/quick-02.png" alt="챗봇"></a></li>
+							<li><a href="#">대출증명서발급<img src="./img/all_menu/service-08.png" alt="대출증명서발급"></a></li>
+							<li><a href="#">미환급금찾기<img src="./img/all_menu/service-08.png" alt="미환급금찾기"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="gnb" class="gnb">
+				<div class="container">
+					<nav id="nav">
+						<div class="bg"></div>
+						<div class="menu">
+							<ul>
+								<li class="dep1"><a href="./sub/financial_instruments.html" title="금융상품">금융상품</a>
+									<ul class="dep_height">
+										<li><a href="./sub/financial_instruments.html" title="서민금융 알아보기">서민금융 알아보기</a></li>
+										<li class="dep2"><a href="./sub/financial_instruments.html" title="생활안정자금">생활안정자금</a>
+											<ul>
+												<li><a href="#" title="햇살론유스">햇살론유스</a></li>
+												<li><a href="#" title="햇살론뱅크">햇살론뱅크</a></li>
+												<li><a href="#" title="햇살론카드">햇살론카드</a></li>
+												<li><a href="#" title="근로자햇살론">근로자햇살론</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="고금리대안자금">고금리대안자금</a>
+											<ul>
+												<li><a href="#" title="햇살론15">햇살론15</a></li>
+												<li><a href="#" title="최저신용자특례보증">최저신용자특례보증</a></li>
+												<li><a href="#" title="소액생계비대출">소액생계비대출</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="창업&middot;운영자금">창업&middot;운영자금</a>
+											<ul>
+												<li><a href="#" title="미소금융 창업&middot;운영자금">미소금융 창업&middot;운영자금</a></li>
+												<li><a href="#" title="영세가맹점주 금리우대">영세가맹점주 금리우대</a></li>
+												<li><a href="#" title="민간사업수행기관 창업&middot;운영자금">민간사업수행기관
+														창업&middot;운영자금</a></li>
+												<li><a href="#" title="전통시장 소액대출">전통시장 소액대출</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="자산형성">자산형성</a>
+											<ul>
+												<li><a href="#" title="청년희망적금">청년희망적금</a></li>
+												<li><a href="#" title="미소드림적금">미소드림적금</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="소액보험">소액보험</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/financial_life.html" title="금융생활">금융생활</a>
+									<ul class="dep_height">
+										<li><a href="./sub/financial_life.html" title="금융교육">금융교육</a></li>
+										<li><a href="#" title="맞춤대출">맞춤대출</a></li>
+										<li><a href="#" title="휴면예금">휴면예금</a></li>
+										<li><a href="#" title="신용&middot;부채관리 컨설팅">신용&middot;부채관리 컨설팅</a></li>
+										<li><a href="#" title="자영업 컨설팅">자영업 컨설팅</a></li>
+										<li><a href="#" title="취업지원">취업지원</a></li>
+										<li><a href="#" title="채무조정제도">채무조정제도</a></li>
+										<li class="dep2"><a href="#" title="서민금융 한눈에">서민금융 한눈에</a>
+											<ul>
+												<li><a href="#" title="대출상품 한눈에">대출상품 한눈에</a></li>
+												<li><a href="#" title="자산형성상품 한눈에">자산형성상품 한눈에</a></li>
+												<li><a href="#" title="사회적금융 한눈에">사회적금융 한눈에</a></li>
+												<li><a href="#" title="복지 한눈에">복지 한눈에</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="온라인 재무진단">온라인 재무진단</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/consultation_support.html" title="상담지원">상담지원</a>
+									<ul class="dep_height">
+										<li><a href="./sub/consultation_support.html" title="1397서민금융콜센터">1397서민금융<br>콜센터</a></li>
+										<li class="dep2"><a href="#" title="서민금융통합 지원센터">서민금융통합<br>지원센터</a>
+											<ul>
+												<li><a href="#" title="센터 소개">센터 소개</a></li>
+												<li><a href="#" title="전국센터찾기">전국센터찾기</a></li>
+												<li><a href="#" title="전국미소지점찾기">전국미소지점찾기</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="이동상담">이동상담</a></li>
+										<li><a href="#" title="자주하는 질문">자주하는 질문</a></li>
+										<li><a href="#" title="1:1문의">1:1문의</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/public_participation.html" title="국민참여">국민참여</a>
+									<ul class="dep_height">
+										<li><a href="./sub/public_participation.html" title="칭찬합니다">칭찬합니다</a></li>
+										<li><a href="#" title="국민제안">국민제안</a></li>
+										<li><a href="#" title="서민금융 사칭 신고센터">서민금융 사칭 신고센터</a></li>
+										<li class="dep2"><a href="#" title="금융소비자보호">금융소비자보호</a>
+											<ul>
+												<li><a href="#" title="고객서비스 헌장">고객서비스 헌장</a></li>
+												<li><a href="#" title="고객서비스 이행 표준">고객서비스 이행 표준</a></li>
+												<li><a href="#" title="금융소비자보호 자료실">금융소비자보호 자료실</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="자료실(양식함)">자료실(양식함)</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/notifications_pr.html" title="알림&middot;홍보">알림&middot;홍보</a>
+									<ul class="dep_height">
+										<li><a href="./sub/notifications_pr.html" title="공지사항">공지사항</a></li>
+										<li><a href="#" title="채용정보">채용정보</a></li>
+										<li><a href="#" title="보도자료">보도자료</a></li>
+										<li><a href="#" title="기고&middot;인터뷰">기고&middot;인터뷰</a></li>
+										<li><a href="#" title="홍보자료">홍보자료</a></li>
+										<li><a href="#" title="대국민 공모전">대국민 공모전</a></li>
+										<li><a href="#" title="서금원 TV">서금원 TV</a></li>
+										<li><a href="#" title="고마워요 서민금융">고마워요 서민금융</a></li>
+										<li><a href="#" title="카드뉴스">카드뉴스</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/collaborative_business.html" title="협업사업">협업사업</a>
+									<ul class="dep_height">
+										<li><a href="./sub/collaborative_business.html" title="미소금융 재단소개">미소금융 재단소개</a></li>
+										<li><a href="#" title="미소금융 지역 법인소개">미소금융 지역 법인소개</a></li>
+										<li><a href="#" title="협업기관 소개">협업기관 소개</a></li>
+										<li><a href="#" title="금융&middot;복지 양방향서비스">금융&middot;복지 양방향서비스</a></li>
+										<li class="dep2"><a href="#" title="사회적금융 사업">사회적금융 사업</a>
+											<ul>
+												<li><a href="#" title="서금원 사회적금융 사업">서금원 사회적금융 사업</a></li>
+												<li><a href="#" title="사회적금융이란">사회적금융이란</a></li>
+												<li><a href="#" title="사회적금융 중개기관">사회적금융 중개기관</a></li>
+												<li><a href="#" title="시회적금융 우수 사례">시회적금융 우수 사례</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="기부자안내">기부자안내</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./sub/institution_introduction.html" title="기관소개">기관소개</a>
+									<ul class="dep_height">
+										<li class="dep2"><a href="./sub/institution_introduction.html" title="설립목적">설립목적</a>
+											<ul>
+												<li><a href="./sub/institution_introduction.html" title="설립목적">설립목적</a></li>
+												<li><a href="#" title="연혁">연혁</a></li>
+												<li><a href="#" title="경영 전략">경영 전략</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="인사말">인사말</a></li>
+										<li><a href="#" title="상징&middot;캐릭터">상징&middot;캐릭터</a></li>
+										<li><a href="#" title="조직안내">조직안내</a></li>
+										<li><a href="#" title="오시는 길">오시는 길</a></li>
+										<li class="dep2"><a href="#" title="인권&middot;윤리경영">인권&middot;윤리경영</a>
+											<ul>
+												<li><a href="#" title="인권경영">인권경영</a></li>
+												<li><a href="#" title="윤리경영">윤리경영</a></li>
+												<li><a href="#" title="양성평등 임원 목표제">양성평등 임원 목표제</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="ESG 경영">ESG 경영</a></li>
+										<li class="dep2"><a href="#" title="클린신고센터">클린신고센터</a>
+											<ul>
+												<li><a href="#" title="클린신고센터">클린신고센터</a></li>
+												<li><a href="#" title="상임강사 HOT-LINE">상임강사 HOT-LINE</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="정보공개">정보공개</a>
+											<ul>
+												<li><a href="#" title="정보공개">정보공개</a></li>
+												<li><a href="#" title="공공데이터 개방">공공데이터 개방</a></li>
+												<li><a href="#" title="사업실명제">사업실명제</a></li>
+												<li><a href="#" title="사전정보 공개 목록">사전정보 공개 목록</a></li>
+												<li><a href="#" title="경영공시">경영공시</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="main_visual_wrap">
+				<div class="main_visual">
+					<button type="button" class="main_visual_prev"></button>
+					<div class="slick_track">
+						<div class="slick_slide">
+							<div class=visual_background><img src="./img/main/main-14.png" alt="">
+								<div class="visual_text_box">
+									<div class="container">
+										<div class="visual_text">
+											<div class="first_text">행복한 금융생활을 위한</div>
+											<div class="second_text">포용적 서민금융의 든든한 토대</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slick_slide">
+							<div class=visual_background><img src="./img/main/main-15.png" alt=""></div>
+							<div class="visual_text_box">
+								<div class="container">
+									<div class="visual_text">
+										<div class="first_text">청년의 도약</div>
+										<div class="second_text">희망이 되는 서민금융</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slick_slide">
+							<div class=visual_background><img src="./img/main/main-16.png" alt=""></div>
+							<div class="visual_text_box">
+								<div class="container">
+									<div class="visual_text">
+										<div class="first_text">사회적 책임을 다하는</div>
+										<div class="second_text">지속가능한 서민금융</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="main_visual_next"></button>
+				</div>
+			</div>
+			<div class="kinfa_product_wrap">
+				<div class="container">
+					<div class="kinfa_product">
+						<div class="kinfa_product_left">
+							<div class="left_tit">
+								<div class="left_tit_icon"><img src="./img/logo/product-logo.png" alt="product-logo">
+								</div>
+								<div class="left_title">서민금융 알아보기</div>
+							</div>
+							<div class="left_text">
+								필요 목적에 맞는 <br>
+								다양한 서민금융상품을 알아보세요.
+							</div>
+							<div class="fade_arrow">
+								<span>></span>
+								<span>></span>
+								<span>></span>
+								<span>></span>
+							</div>
+						</div>
+						<div class="kinfa_product_right">
+							<ul>
+								<li><a href="#" title="생활안정자금">생활안정자금</a></li>
+								<li><a href="#" title="고금리 대안상품">고금리 대안상품</a></li>
+								<li><a href="#" title="창업&middot;운영자금">창업&middot;운영자금</a></li>
+								<li><a href="#" title="자산형성">자산형성</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kinfa_contents_wrap">
+				<div class="container">
+					<div class="kinfa_left_right_bottom">
+						<div class="kinfa_contents_left">
+							<div class="new_wrap">
+								<div class="new_wrap_title">
+									<h2><span>보도자료</span></h2>
+									<a href="#" class="ir_so">더보기</a>
+								</div>
+								<ul>
+									<li>
+										<div>
+											<a href="#">
+												<div class="new_thum"><img src="./img/news/getImage.jpeg" alt="보도자료사진1">
+												</div>
+												<div class="new_text">
+													<div class="new_tit">
+														서민금융진흥원, 어버이날 맞아 종로 천사무료습식소에서 노사공동 사회공헌활동 실시
+													</div>
+													<div class="new_date">2023-05-04</div>
+												</div>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div>
+											<a href="#">
+												<div class="new_thum"><img src="./img/news/getImage (1).jpeg"
+														alt="보도자료사진2">
+												</div>
+												<div class="new_text">
+													<div class="new_tit">
+														서민금융진흥원, 세계은행과 함께 국제사회 정책서민금융 교류 및 협력 강화를 위한 특강 개최
+													</div>
+													<div class="new_date">2023-04-27</div>
+												</div>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="notice_wrap">
+								<div class="notice_wrap_title">
+									<h2><span>공지사항</span></h2>
+									<a href="#" class="ir_so">더보기</a>
+								</div>
+								<div class="first_list">
+									<div class="first_list_flex">
+										<div class="first_list_date">
+											<div>
+												<div class="first_list_day">25</div>
+												<div class="first_list_month">2023-04</div>
+											</div>
+										</div>
+										<div class="first_list_tit">
+											<a href="#">
+												<dl>
+													<dt>2023~2025 회계연도 서민금융진흥원 외부회계감사 입찰 제안요청서 설명회 안내</dt>
+													<dd>
+														2023~2025년 서민금융진흥원 외부회계감사 입찰 관련 제안요청서 설명회를 다음과 같이 진행하고자 합니다. - 다
+														음 -
+														개요 ㅇ 일시 : 2023.5.9.(화) 15:00~17:00 ㅇ 장소 : 서민금융진흥원 본점 14층 대회의실 ㅇ
+														대상 :
+														투찰 회계법인 2. 주요내용 ㅇ 2023~2025년 서민금융진흥원 외부회계감사 입찰 제안요청서 설명 ㅇ 질의 및
+														응답 3.
+														제안요청서 설명회 참석신청 ㅇ 신청방법 : seeun49@kinfa.or.kr ㅇ 신청기한 :
+														2023.5.1.(월)
+														14:00까지 ㅇ 신청양식 : 별도 양식은 없으나 신청시 1)회계법인명 및 참석인원, 2)문의사항 기재 * 신청
+														이메일로
+														상세주소 및 출입방법 등 세부안내 예정 아울러 입찰공고문 및 제안요청서를 첨부하오니 관심 있으신 회계법인에서는
+														첨부파일 및
+														나라장터 공고를 참고하여 주시기 바랍니다. ☎ 관련문의 : 감사실 과장 임세은(02-2128-8235)
+													</dd>
+												</dl>
+											</a>
+										</div>
+									</div>
+								</div>
+								<ul>
+									<li>
+										<div class="notice_title_width">
+											<div class="notice_tit">
+												<a href="#">청년도약계좌 취급기관 모집공고</a>
+											</div>
+										</div>
+										<div class="notice_date_width">
+											<div class="notice_date">2023-03-10</div>
+										</div>
+									</li>
+									<li>
+										<div class="notice_title_width">
+											<div class="notice_tit">
+												<a href="#">2023년 서민금융진흥원 임직원 건강검진 협약기관 선정 공고</a>
+											</div>
+										</div>
+										<div class="notice_date_width">
+											<div class="notice_date">2023-02-10</div>
+										</div>
+									</li>
+									<li>
+										<div class="notice_title_width">
+											<div class="notice_tit">
+												<a href="#">[모바일 전자고지] 시행 안내</a>
+											</div>
+										</div>
+										<div class="notice_date_width">
+											<div class="notice_date">2022-12-26</div>
+										</div>
+									</li>
+									<li>
+										<div class="notice_title_width">
+											<div class="notice_tit">
+												<a href="#">개인정보의 목적 외 이용 또는 제3자 제공 공고</a>
+											</div>
+										</div>
+										<div class="notice_date_width">
+											<div class="notice_date">2023-04-28</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="kinfa_contents_right">
+							<div class="quick_wrap">
+								<div class="product_banner_wrap">
+									<div class="app_qr">
+										<div class="app_width">
+											<div class="app_text">
+												<p class="sub_text">서민금융진흥원 앱</p>
+												<p class="point"><span>내려받기</span></p>
+											</div>
+											<div class="app_list">
+												<ul>
+													<li><img src="./img/app/icon-googleplay.png" alt="구글플레이"></li>
+													<li><img src="./img/app/icon-app.png" alt="앱스토어"></li>
+												</ul>
+											</div>
+										</div>
+										<div class="qr_width">
+											<div><img src="./img/app/qr02.png" alt="qr코드"></div>
+										</div>
+									</div>
+								</div>
+								<ul class="quick_ul">
+									<li>
+										<div class="quick_box">
+											<a href="#">
+												<div class="row">
+													<div>
+														<div class="img_box"><img src="./img/quick/quick-04.png"
+																alt="서민금융콜센터"></div>
+													</div>
+													<div class="quick_text_box">
+														<div class="quick_text">서민금융콜센터</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="quick_box">
+											<a href="#">
+												<div class="row">
+													<div>
+														<div class="img_box"><img src="./img/quick/quick-05.png"
+																alt="전국센터찾기"></div>
+													</div>
+													<div>
+														<div class="quick_text">전국센터찾기</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="quick_box">
+											<a href="#">
+												<div class="row">
+													<div>
+														<div class="img_box"><img src="./img/quick/quick-06.png"
+																alt="챗봇상담"></div>
+													</div>
+													<div>
+														<div class="quick_text">챗봇상담</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="popup_wrap">
+								<div class="popup_slide_wrap">
+									<button type="button" class="popup_slick_prev ir_so">이전</button>
+									<button type="button" class="popup_slick_btn ir_so">재생</button>
+									<div class="popup_slick_list">
+										<div class="popup_slick_track">
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/1.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/2.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/3.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/4.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/5.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/6.png"
+														alt=""></a></div>
+											<div class="popup_slide_box"><a href="#"><img src="./img/mini_banner/7.png"
+														alt=""></a></div>
+										</div>
+									</div>
+									<button type="button" class="popup_slick_next ir_so">다음</button>
+								</div>
+							</div>
+						</div>
+						<div class="kinfa_contents_bottom">
+							<div class="banner_wrap">
+								<div class="kinfa_contents_banner">
+									<div class="kinfa_contents_banner_text_btn">
+										<div class="kinfa_contents_banner_text">
+											<span>서금원 소식</span>
+											<br>
+											알아보세요.
+										</div>
+										<ul class="kinfa_contents_banner_btn">
+											<li><button class="kinfa_contents_banner_slick_prev"></button></li>
+											<li><button class="kinfa_contents_banner_slick_btn"></button></li>
+											<li><button class="kinfa_contents_banner_slick_next"></button></li>
+										</ul>
+									</div>
+									<div class="kinfa_contents_banner_slide">
+										<div class="banner_slide_wrap">
+											<div class="banner_slide_list">
+												<div class="banner_slide_track">
+													<div class="banner_slide_box">
+														<a href="#">
+															<div class="img_wrap"><img src="./img/news/banner-02.png"
+																	alt=""></div>
+														</a>
+													</div>
+													<div class="banner_slide_box">
+														<a href="#">
+															<div class="img_wrap"><img src="./img/news/banner-03.png"
+																	alt=""></div>
+														</a>
+													</div>
+													<div class="banner_slide_box">
+														<a href="#">
+															<div class="img_wrap"><img src="./img/news/banner-04.png"
+																	alt=""></div>
+														</a>
+													</div>
+													<div class="banner_slide_box">
+														<a href="#">
+															<div class="img_wrap"><img src="./img/news/banner-06.png"
+																	alt=""></div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kinfa_sns_wrap">
+				<div class="sns_top">
+					<div class="container">
+						<div class="sns_top_tit">대국민 소통</div>
+					</div>
+					<div class="sns_quick_wrap">
+						<div class="container">
+							<ul>
+								<li>
+									<a href="#">
+										<div class="sns_quick_img sns_quick_naver"></div>
+										<div class="sns_quick_tit sns_quick_green">블로그 바로가기</div>
+										<div class="sns_quick_arrow"><span class="arrow sns_quick_green"></span></div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="sns_quick_img sns_quick_insta"></div>
+										<div class="sns_quick_tit sns_quick_red">인스타그램 바로가기</div>
+										<div class="sns_quick_arrow"><span class="arrow sns_quick_red"></span></div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="sns_quick_img sns_quick_face"></div>
+										<div class="sns_quick_tit sns_quick_blue">페이스북 바로가기</div>
+										<div class="sns_quick_arrow "><span class="arrow sns_quick_blue"></span></div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="sns_quick_img sns_quick_web"></div>
+										<div class="sns_quick_tit sns_quick_blue2">웹진 바로가기</div>
+										<div class="sns_quick_arrow "><span class="arrow sns_quick_blue2"></span></div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sns_bottom">
+					<div class="container">
+						<div class="sns_bottom_wrap">
+							<div class="sns_bottom_width">
+								<div class="sns_bottom_top">
+									<div class="sns_bottom_header">
+										<div class="sns_bottom_tit">유튜브</div>
+										<a href="#">
+											<div class="sns_bottom_more sns_bottom_you">유튜브 바로가기 +</div>
+										</a>
+									</div>
+								</div>
+								<div class="sns_slide_wrap">
+									<div class="sns_slide you_slide">
+										<div class="img_box border_box ">
+											<a href="#">
+												<img src="./img/youtube/20230227-youtube.jpg
+											" alt="">
+											</a>
+											<div class="sns_slide_tit">서민금융진흥원 박세리 홍보대사</div>
+										</div>
+										<div class="img_box border_box">
+											<a href="#">
+												<img src="./img/youtube/20230313-1-youtube.jpg
+												" alt="">
+											</a>
+											<div class="sns_slide_tit">몰못써 청년희망적금 똑똑하게 활용하기</div>
+										</div>
+										<div class="img_box border_box">
+											<a href="#">
+												<img src="./img/youtube/20230313-2-youtube.jpg
+													" alt="">
+											</a>
+											<div class="sns_slide_tit">슬금생 신용점수가 낮아도 신용점수 관리하는 방법</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="sns_slick_button">
+									<button type="button" class="sns_slick_prev ir_so you_prev">이전</button>
+									<button type="button" class="sns_slick_btn ir_so you_btn">이전</button>
+									<button type="button" class="sns_slick_next ir_so you_next">이전</button>
+								</div>
+							</div>
+							<div class="sns_bottom_width">
+								<div class="sns_bottom_top">
+									<div class="sns_bottom_header">
+										<div class="sns_bottom_tit">카드뉴스</div>
+										<a href="#">
+											<div class="sns_bottom_more sns_bottom_plus">+ 더보기</div>
+										</a>
+									</div>
+								</div>
+								<div class="sns_slide_wrap">
+									<div class="sns_slide card_slide">
+										<div class="img_box">
+											<a href="#">
+												<img src="./img/card_news/1.png" alt="">
+											</a>
+											<div class="sns_slide_tit">미니 금융게임 -청년편-</div>
+										</div>
+										<div class="img_box">
+											<a href="#">
+												<img src="./img/card_news/2.png" alt="">
+											</a>
+											<div class="sns_slide_tit">QUIZ 이벤트 정답:1397송</div>
+										</div>
+										<div class="img_box">
+											<a href="#">
+												<img src="./img/card_news/3.png" alt="">
+											</a>
+											<div class="sns_slide_tit">미니 금융게임 -금융꿀팁편-</div>
+										</div>
+									</div>
+								</div>
+								<div class="sns_slick_button">
+									<button type="button" class="sns_slick_prev ir_so card_prev">이전</button>
+									<button type="button" class="sns_slick_btn ir_so card_btn">재생</button>
+									<button type="button" class="sns_slick_next ir_so card_next">다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kinfa_link_wrap">
+				<div class="back1"></div>
+				<div class="back2"></div>
+				<div class="container">
+					<div class="kinfa_link">
+						<h3>금융생활 바로가기 <img src="./img/financial_life/icon-go-b.png" alt=""></h3>
+						<div class="kinfa_family_wrap">
+							<ul>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-01.png"
+													alt="휴먼예금"></div>
+											<div class="family_text">휴먼예금</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-02.png"
+													alt="맞춤대출"></div>
+											<div class="family_text">맞춤대출</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-03.png"
+													alt="금융교육포털"></div>
+											<div class="family_text">금융교육포털</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-04.png"
+													alt="취업지원"></div>
+											<div class="family_text">취업지원</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-05.png"
+													alt="신용부채관리 컨설팅"></div>
+											<div class="family_text">신용부채관리<br>컨설팅</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="family_box">
+										<a href="#">
+											<div class="family_img"><img src="./img/financial_life/service-06.png"
+													alt="자영업컨설팅"></div>
+											<div class="family_text">자영업컨설팅</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>ßß
+					<div class="kinfa_decal_wrap">
+						<div class="kinfa_decal">
+							<div class="kinfa_decal_tit">신고센터</div>
+							<div class="kinfa_decal_rgb">
+								<ul>
+									<li>
+										<div class="kinfa_decal_box">
+											<a href="#">
+												<div class="kinfa_decal_red">
+													<div class="img_box">
+														<img src="./img/financial_life/decal-icon-01.png" alt="">
+														<span>서민금융사칭신고센터</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="kinfa_decal_box">
+											<a href="#">
+												<div class="kinfa_decal_green">
+													<div class="img_box">
+														<img src="./img/financial_life/decal-icon-02.png" alt="">
+														<span>클린신고센터</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+									<li>
+										<div class="kinfa_decal_box">
+											<a href="#">
+												<div class="kinfa_decal_blue">
+													<div class="img_box">
+														<img src="./img/financial_life/decal-icon-01.png" alt="">
+														<span>상임감사 HOT-LINE</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer id="foot" class="footer_wrap">
+			<div class="menus">
+				<div class="container">
+					<div class="footer_select">
+						<label for="footSelectService_01" class="ir_so">금융ㆍ복지서비스 홈페이지 선택</label>
+						<select id="footSelectService_01">
+							<option>금융ㆍ복지서비스 포털모음</option>
+							<option value="http://fine.fss.or.kr" label="파인">파인</option>
+							<option value="https://www.sleepmoney.or.kr" label="휴면금융재산조회">휴면금융재산조회</option>
+							<option value="https://www.payinfo.or.kr" label="페이인포(계좌통합관리서비스)">페이인포(계좌통합관리서비스)</option>
+							<option value="http://www.bokjiro.go.kr" label="복지로">복지로</option>
+							<option value="http://csa.nps.or.kr" label="NPS 국민연금(노후준비서비스)">NPS 국민연금(노후준비서비스)</option>
+							<option value="http://www.epeople.go.kr" label="소극행정신고센터">소극행정신고센터</option>
+						</select>
+						<button class="footer_btn" type="button">이동</button>
+					</div>
+					<div class="footer_select">
+						<label for="footSelectService_02" class="ir_so">관련기관 홈페이지</label>
+						<select id="footSelectService_02">
+							<option>관련기관 홈페이지</option>
+							<option value="http://www.fsc.go.kr" label="금융위원회">금융위원회</option>
+							<option value="http://www.fss.or.kr" label="금융감독원">금융감독원</option>
+							<option value="http://www.ccrs.or.kr" label="페신용회복위원회">신용회복위원회</option>
+							<option value="http://www.bokgwon.go.kr" label="복권위원회">복권위원회</option>
+							<option value="http://www.happyfund.or.kr" label="국민행복기금">국민행복기금</option>
+							<option value="http://www.kdic.or.kr" label="예금보험공사">예금보험공사</option>
+							<option value="http://www.hf.go.kr" label="HF한국주택금융공사">HF한국주택금융공사</option>
+							<option value="http://www.kfb.or.kr" label="전국은행연합회">전국은행연합회</option>
+							<option value="http://www.klia.or.kr" label="생명보험협회">생명보험협회</option>
+							<option value="http://www.knia.or.kr" label="손해보험협회">손해보험협회</option>
+							<option value="http://www.gov.kr" label="정부24">정부24</option>
+							<option value="http://www.nts.go.kr" label="국세청">국세청</option>
+							<option value="http://www.nhis.or.kr" label="국민건강보험공단">국민건강보험공단</option>
+						</select>
+						<button class="footer_btn footer_btn_02" type="button">이동</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="container">
+					<div class="footer_left">
+						<p>
+							<a href="#" class="a_blue">개인정보처리방침</a>
+							<a href="#">신용정보 활용체제</a>
+							<a href="#">찾아오시는 길</a>
+						</p>
+
+						<p>
+						<address class="address">주소: 서울특별시 중구 세종대로 14(그랜드센트럴) 9~12층, 14층 (우편번호 : 04527)
+							<br>대표전화: 국번없이 1397
+						</address>
+						</p>
+
+						<p>Copyright Since 2016 Korea Inclusive Finance Agency. <br>
+							All Rights Reserved.
+						</p>
+					</div>
+					<div class="footer_right">
+						<div class="footer_right_wrap">
+							<div class="footer_wa"><a href="#"><img class="wa" src="./img/footer/wa-logo.png"
+										alt="웹접근성"></a></div>
+							<div class="footer_isms_height">
+								<div class="footer_isms"><a href="#"><img class="isms"
+											src="./img/footer/footer-isms-logo.png" alt="isms">
+										<span>[인증범위]대국민 서비스 운영(웹,모바일) <br>
+											[유효기간]2022.02.23. ~ 2025.02.22.
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script>
+		jQuery(function ($) {
+			$(".menu>ul>li>ul>li>a").on("mouseover focus", function () {
+				$(this).parent().addClass("active").siblings().removeClass("active");;
+			});
+			/* $(".menu>ul>li>ul>li").on("mouseover focus", function () {
+				$(".dep2").parents().siblings().addClass("close");
+			}); */
+		});
+
+		jQuery(function ($) {
+			$(".menu>ul>li").on("mouseover focus", function () {
+				let a = 0;
+				a = $(".menu>ul>li .dep_height").innerHeight();
+				console.log(a);
+				$('.bg').height(a);
+			});
+			$(".menu>ul>li").on("mouseout", function () {
+				$('.bg').height(0);
+			});
+		});
+	</script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script type="text/javascript">
+		$('.slick_track').slick({
+			dots: false,
+			infinite: true,
+			speed: 500,
+			fade: true,
+			cssEase: 'linear',
+			prevArrow: $('.main_visual_prev'),
+			nextArrow: $('.main_visual_next'),
+			autoplay: false
+		});
+		$('.popup_slick_track').slick({
+			infinite: true,
+			speed: 500,
+			prevArrow: $('.popup_slick_prev'),
+			nextArrow: $('.popup_slick_next'),
+			autoplay: true
+		});
+		var sw = 0;
+		$('.popup_slick_btn').click(function () {
+			if (sw == 0) {
+				$('.popup_slick_btn').removeClass('popup_slick_pause');
+				$('.popup_slick_btn').addClass('popup_slick_play');
+				$('.popup_slick_track').slick('slickPlay')
+				sw = 1;
+			} else {
+				$('.popup_slick_btn').removeClass('popup_slick_play');
+				$('.popup_slick_btn').addClass('popup_slick_pause');
+				$('.popup_slick_track').slick('slickPause')
+				sw = 0;
+			}
+		});
+		$('.banner_slide_track').slick({
+			infinite: true,
+			speed: 500,
+			fade: true,
+			cssEase: 'linear',
+			prevArrow: $('.kinfa_contents_banner_slick_prev'),
+			nextArrow: $('.kinfa_contents_banner_slick_next'),
+			autoplay: true
+		});
+		$('.kinfa_contents_banner_slick_btn').click(function () {
+			if (sw == 0) {
+				$('.kinfa_contents_banner_slick_btn').removeClass('kinfa_contents_banner_slick_play');
+				$('.kinfa_contents_banner_slick_btn').addClass('kinfa_contents_banner_slick_pause');
+				$('.banner_slide_track').slick('slickPlay')
+				sw = 1;
+			} else {
+				$('.kinfa_contents_banner_slick_btn').removeClass('kinfa_contents_banner_slick_pause');
+				$('.kinfa_contents_banner_slick_btn').addClass('kinfa_contents_banner_slick_play');
+				$('.banner_slide_track').slick('slickPause')
+				sw = 0;
+			}
+		});
+		$('.sns_slide').slick({
+			dots: true,
+			infinite: true,
+			speed: 1000,
+			fade: false,
+			cssEase: 'linear',
+			autoplay: true,
+			autoplaySpeed: 2000,
+			arrows: false,
+		});
+		$('.you_prev').click(function () {
+			$('.you_slide').slick('slickPrev')
+		});
+		$('.you_btn').click(function () {
+			$('.you_slide').slick('slickPause')
+		});
+		$('.you_next').click(function () {
+			$('.you_slide').slick('slickNext')
+		});
+		$('.card_prev').click(function () {
+			$('.card_slide').slick('slickPrev')
+		});
+		$('.card_btn').click(function () {
+			$('.card_slide').slick('slickPause')
+		});
+		$('.card_next').click(function () {
+			$('.card_slide').slick('slickNext')
+		});
+
+		sw = 0;
+		$('.allmenu_icon').click(function () {
+			if (sw == 0) {
+				$('.plus_menu').addClass('plus_menu_active');
+				sw = 1;
+			} else {
+				$('.plus_menu').removeClass('plus_menu_active');
+				sw = 0;
+			}
+		});
+	</script>
+</body>
+
+</html>

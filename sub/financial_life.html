@@ -1,0 +1,737 @@
+<!-- 
+	수정할 것
+	1. 메인에서 넘어올 때, 메뉴바가 이상하게 유지되는 것
+	2. 페이지 맨위로 올라가는 파란 버튼
+ -->
+
+<!DOCTYPE HTML>
+<html lang='ko'>
+
+<head>
+	<title>금융교육	&#124; 금융생활 &#124;</title>
+	<meta charset='utf-8'>
+	<meta name='Viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.6'>
+	<meta name='Title' content='서민금융진흥원'>
+	<meta name='Subject' content='clon coding'>
+	<meta name='Keywords' content='서민금융진흥원, 금융, 생활안정자금'>
+	<meta name='Author' content='seongho'>
+	<meta name='Publisher' content='seongho'>
+	<meta name='Description' content='서민금융진흥원'>
+	<meta name='Author-Date' content='20230426'>
+	<meta name='Robots' content='index,follow'>
+
+
+	<link rel='stylesheet' href='../css/reset.css'>
+	<link rel='stylesheet' href='../css/fl.css'>
+	<link rel="icon" href="../img/logo/product-logo.png">
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+		integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div id="skip">
+		<p>바로가기 메뉴</p>
+		<ul>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#main-renew">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<div id="wrap">
+		<header id="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="align_items_center">
+						<span class="logo"><a href="../index.html"><img src="../img/logo/logo_new.png"
+									alt="logo"></a></span>
+						<ul class="header_top_right">
+							<li class="eng_center">
+								<a href="#" title="새창으로 열림" target="_blank" class="eng">ENG</a>
+								<a href="#" title="인증센터" target="_blank" class="btn_yellow">인증센터</a>
+							</li>
+							<li class="all_menu">
+								<label for="allMenuCheck" class="allmenu_btn">
+									<input type="checkbox" id="allMenuCheck">
+									<div class="allmenu_icon">
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+									<p class="state">전체보기</p>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="plus_menu">
+					<div class="container">
+						<ul class="plus_menu_ul">
+							<li class="dep1"><a href="./financial_instruments.html" title="금융상품">금융상품</a>
+								<ul class="dep_height">
+									<li><a href="./financial_instruments.html" title="서민금융 알아보기">서민금융 알아보기</a></li>
+									<li class="dep2"><a href="#" title="생활안정자금">생활안정자금</a>
+										<ul>
+											<li><a href="#" title="햇살론유스">- 햇살론유스</a></li>
+											<li><a href="#" title="햇살론뱅크">- 햇살론뱅크</a></li>
+											<li><a href="#" title="햇살론카드">- 햇살론카드</a></li>
+											<li><a href="#" title="근로자햇살론">- 근로자햇살론</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="고금리대안자금">고금리대안자금</a>
+										<ul>
+											<li><a href="#" title="햇살론15">- 햇살론15</a></li>
+											<li><a href="#" title="최저신용자특례보증">- 최저신용자특례보증</a></li>
+											<li><a href="#" title="소액생계비대출">- 소액생계비대출</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="창업&middot;운영자금">창업&middot;운영자금</a>
+										<ul>
+											<li><a href="#" title="미소금융 창업&middot;운영자금">- 미소금융 <br>창업&middot;운영자금</a>
+											</li>
+											<li><a href="#" title="영세가맹점주 금리우대">- 영세가맹점주<br>금리우대</a></li>
+											<li><a href="#" title="민간사업수행기관 창업&middot;운영자금">- 민간사업수행기관<br>
+													창업&middot;운영자금</a></li>
+											<li><a href="#" title="전통시장 소액대출">- 전통시장 소액대출</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="자산형성">자산형성</a>
+										<ul>
+											<li><a href="#" title="청년희망적금">- 청년희망적금</a></li>
+											<li><a href="#" title="미소드림적금">- 미소드림적금</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="소액보험">소액보험</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./financial_life.html" title="금융생활">금융생활</a>
+								<ul class="dep_height">
+									<li><a href="./financial_life.html" title="금융교육">금융교육</a></li>
+									<li><a href="#" title="맞춤대출">맞춤대출</a></li>
+									<li><a href="#" title="휴면예금">휴면예금</a></li>
+									<li><a href="#" title="신용&middot;부채관리 컨설팅">신용&middot;부채관리 컨설팅</a></li>
+									<li><a href="#" title="자영업 컨설팅">자영업 컨설팅</a></li>
+									<li><a href="#" title="취업지원">취업지원</a></li>
+									<li><a href="#" title="채무조정제도">채무조정제도</a></li>
+									<li class="dep2"><a href="#" title="서민금융 한눈에">서민금융 한눈에</a>
+										<ul>
+											<li><a href="#" title="대출상품 한눈에">- 대출상품 한눈에</a></li>
+											<li><a href="#" title="자산형성상품 한눈에">- 자산형성상품 한눈에</a></li>
+											<li><a href="#" title="사회적금융 한눈에">- 사회적금융 한눈에</a></li>
+											<li><a href="#" title="복지 한눈에">- 복지 한눈에</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="온라인 재무진단">온라인 재무진단</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./consultation_support.html" title="상담지원">상담지원</a>
+								<ul class="dep_height">
+									<li><a href="./consultation_support.html" title="1397서민금융콜센터">1397서민금융<br>콜센터</a></li>
+									<li class="dep2"><a href="#" title="서민금융통합 지원센터">서민금융통합<br>지원센터</a>
+										<ul>
+											<li><a href="#" title="센터 소개">- 센터 소개</a></li>
+											<li><a href="#" title="전국센터찾기">- 전국센터찾기</a></li>
+											<li><a href="#" title="전국미소지점찾기">- 전국미소지점찾기</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="이동상담">이동상담</a></li>
+									<li><a href="#" title="자주하는 질문">자주하는 질문</a></li>
+									<li><a href="#" title="1:1문의">1:1문의</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./public_participation.html" title="국민참여">국민참여</a>
+								<ul class="dep_height">
+									<li><a href="./public_participation.html" title="칭찬합니다">칭찬합니다</a></li>
+									<li><a href="#" title="국민제안">국민제안</a></li>
+									<li><a href="#" title="서민금융 사칭 신고센터">서민금융 사칭 신고센터</a></li>
+									<li class="dep2"><a href="#" title="금융소비자보호">금융소비자보호</a>
+										<ul>
+											<li><a href="#" title="고객서비스 헌장">- 고객서비스 헌장</a></li>
+											<li><a href="#" title="고객서비스 이행 표준">- 고객서비스 이행 표준</a></li>
+											<li><a href="#" title="금융소비자보호 자료실">- 금융소비자보호<br>자료실</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="자료실(양식함)">자료실(양식함)</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./notifications_pr.html" title="알림&middot;홍보">알림&middot;홍보</a>
+								<ul class="dep_height">
+									<li><a href="./notifications_pr.html" title="공지사항">공지사항</a></li>
+									<li><a href="#" title="채용정보">채용정보</a></li>
+									<li><a href="#" title="보도자료">보도자료</a></li>
+									<li><a href="#" title="기고&middot;인터뷰">기고&middot;인터뷰</a></li>
+									<li><a href="#" title="홍보자료">홍보자료</a></li>
+									<li><a href="#" title="대국민 공모전">대국민 공모전</a></li>
+									<li><a href="#" title="서금원 TV">서금원 TV</a></li>
+									<li><a href="#" title="고마워요 서민금융">고마워요 서민금융</a></li>
+									<li><a href="#" title="카드뉴스">카드뉴스</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./collaborative_business.html" title="협업사업">협업사업</a>
+								<ul class="dep_height">
+									<li><a href="./collaborative_business.html" title="미소금융 재단소개">미소금융 재단소개</a></li>
+									<li><a href="#" title="미소금융 지역 법인소개">미소금융 지역 법인소개</a></li>
+									<li><a href="#" title="협업기관 소개">협업기관 소개</a></li>
+									<li><a href="#" title="금융&middot;복지 양방향서비스">금융&middot;복지 양방향서비스</a></li>
+									<li class="dep2"><a href="#" title="사회적금융 사업">사회적금융 사업</a>
+										<ul>
+											<li><a href="#" title="서금원 사회적금융 사업">- 서금원 사회적금융<br>사업</a></li>
+											<li><a href="#" title="사회적금융이란">- 사회적금융이란</a></li>
+											<li><a href="#" title="사회적금융 중개기관">- 사회적금융 중개기관</a></li>
+											<li><a href="#" title="시회적금융 우수 사례">- 시회적금융 우수 사례</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="기부자안내">기부자안내</a></li>
+								</ul>
+							</li>
+							<li class="dep1"><a href="./institution_introduction.html" title="기관소개">기관소개</a>
+								<ul class="dep_height">
+									<li class="dep2"><a href="#" title="설립목적">설립목적</a>
+										<ul>
+											<li><a href="#" title="설립목적">- 설립목적</a></li>
+											<li><a href="#" title="연혁">- 연혁</a></li>
+											<li><a href="#" title="경영 전략">- 경영 전략</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="인사말">인사말</a></li>
+									<li><a href="#" title="상징&middot;캐릭터">상징&middot;캐릭터</a></li>
+									<li><a href="#" title="조직안내">조직안내</a></li>
+									<li><a href="#" title="오시는 길">오시는 길</a></li>
+									<li class="dep2"><a href="#" title="인권&middot;윤리경영">인권&middot;윤리경영</a>
+										<ul>
+											<li><a href="#" title="인권경영">- 인권경영</a></li>
+											<li><a href="#" title="윤리경영">- 윤리경영</a></li>
+											<li><a href="#" title="양성평등 임원 목표제">- 양성평등 임원 목표제</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="ESG 경영">ESG 경영</a></li>
+									<li class="dep2"><a href="#" title="클린신고센터">클린신고센터</a>
+										<ul>
+											<li><a href="#" title="클린신고센터">- 클린신고센터</a></li>
+											<li><a href="#" title="상임강사 HOT-LINE">- 상임강사 HOT-LINE</a></li>
+										</ul>
+									</li>
+									<li class="dep2"><a href="#" title="정보공개">정보공개</a>
+										<ul>
+											<li><a href="#" title="정보공개">- 정보공개</a></li>
+											<li><a href="#" title="공공데이터 개방">- 공공데이터 개방</a></li>
+											<li><a href="#" title="사업실명제">- 사업실명제</a></li>
+											<li><a href="#" title="사전정보 공개 목록">- 사전정보 공개 목록</a></li>
+											<li><a href="#" title="경영공시">- 경영공시</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="container">
+						<ul class="plus_menu_sitemap">
+							<li><a href="#">챗봇<img src="../img/all_menu/quick-02.png" alt="챗봇"></a></li>
+							<li><a href="#">대출증명서발급<img src="../img/all_menu/service-08.png" alt="대출증명서발급"></a></li>
+							<li><a href="#">미환급금찾기<img src="../img/all_menu/service-08.png" alt="미환급금찾기"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="gnb" class="gnb">
+				<div class="container">
+					<nav id="nav">
+						<div class="bg"></div>
+						<div class="menu">
+							<ul>
+								<li class="dep1"><a href="./financial_instruments.html" title="금융상품">금융상품</a>
+									<ul class="dep_height">
+										<li><a href="./financial_instruments.html" title="서민금융 알아보기">서민금융 알아보기</a></li>
+										<li class="dep2"><a href="#" title="생활안정자금">생활안정자금</a>
+											<ul>
+												<li><a href="#" title="햇살론유스">햇살론유스</a></li>
+												<li><a href="#" title="햇살론뱅크">햇살론뱅크</a></li>
+												<li><a href="#" title="햇살론카드">햇살론카드</a></li>
+												<li><a href="#" title="근로자햇살론">근로자햇살론</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="고금리대안자금">고금리대안자금</a>
+											<ul>
+												<li><a href="#" title="햇살론15">햇살론15</a></li>
+												<li><a href="#" title="최저신용자특례보증">최저신용자특례보증</a></li>
+												<li><a href="#" title="소액생계비대출">소액생계비대출</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="창업&middot;운영자금">창업&middot;운영자금</a>
+											<ul>
+												<li><a href="#" title="미소금융 창업&middot;운영자금">미소금융 창업&middot;운영자금</a></li>
+												<li><a href="#" title="영세가맹점주 금리우대">영세가맹점주 금리우대</a></li>
+												<li><a href="#" title="민간사업수행기관 창업&middot;운영자금">민간사업수행기관
+														창업&middot;운영자금</a></li>
+												<li><a href="#" title="전통시장 소액대출">전통시장 소액대출</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="자산형성">자산형성</a>
+											<ul>
+												<li><a href="#" title="청년희망적금">청년희망적금</a></li>
+												<li><a href="#" title="미소드림적금">미소드림적금</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="소액보험">소액보험</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./financial_life.html" title="금융생활">금융생활</a>
+									<ul class="dep_height">
+										<li><a href="./financial_life.html" title="금융교육">금융교육</a></li>
+										<li><a href="#" title="맞춤대출">맞춤대출</a></li>
+										<li><a href="#" title="휴면예금">휴면예금</a></li>
+										<li><a href="#" title="신용&middot;부채관리 컨설팅">신용&middot;부채관리 컨설팅</a></li>
+										<li><a href="#" title="자영업 컨설팅">자영업 컨설팅</a></li>
+										<li><a href="#" title="취업지원">취업지원</a></li>
+										<li><a href="#" title="채무조정제도">채무조정제도</a></li>
+										<li class="dep2"><a href="#" title="서민금융 한눈에">서민금융 한눈에</a>
+											<ul>
+												<li><a href="#" title="대출상품 한눈에">대출상품 한눈에</a></li>
+												<li><a href="#" title="자산형성상품 한눈에">자산형성상품 한눈에</a></li>
+												<li><a href="#" title="사회적금융 한눈에">사회적금융 한눈에</a></li>
+												<li><a href="#" title="복지 한눈에">복지 한눈에</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="온라인 재무진단">온라인 재무진단</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./consultation_support.html" title="상담지원">상담지원</a>
+									<ul class="dep_height">
+										<li><a href="./consultation_support.html" title="1397서민금융콜센터">1397서민금융<br>콜센터</a></li>
+										<li class="dep2"><a href="#" title="서민금융통합 지원센터">서민금융통합<br>지원센터</a>
+											<ul>
+												<li><a href="#" title="센터 소개">센터 소개</a></li>
+												<li><a href="#" title="전국센터찾기">전국센터찾기</a></li>
+												<li><a href="#" title="전국미소지점찾기">전국미소지점찾기</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="이동상담">이동상담</a></li>
+										<li><a href="#" title="자주하는 질문">자주하는 질문</a></li>
+										<li><a href="#" title="1:1문의">1:1문의</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./public_participation.html" title="국민참여">국민참여</a>
+									<ul class="dep_height">
+										<li><a href="./public_participation.html" title="칭찬합니다">칭찬합니다</a></li>
+										<li><a href="#" title="국민제안">국민제안</a></li>
+										<li><a href="#" title="서민금융 사칭 신고센터">서민금융 사칭 신고센터</a></li>
+										<li class="dep2"><a href="#" title="금융소비자보호">금융소비자보호</a>
+											<ul>
+												<li><a href="#" title="고객서비스 헌장">고객서비스 헌장</a></li>
+												<li><a href="#" title="고객서비스 이행 표준">고객서비스 이행 표준</a></li>
+												<li><a href="#" title="금융소비자보호 자료실">금융소비자보호 자료실</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="자료실(양식함)">자료실(양식함)</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./notifications_pr.html" title="알림&middot;홍보">알림&middot;홍보</a>
+									<ul class="dep_height">
+										<li><a href="./notifications_pr.html" title="공지사항">공지사항</a></li>
+										<li><a href="#" title="채용정보">채용정보</a></li>
+										<li><a href="#" title="보도자료">보도자료</a></li>
+										<li><a href="#" title="기고&middot;인터뷰">기고&middot;인터뷰</a></li>
+										<li><a href="#" title="홍보자료">홍보자료</a></li>
+										<li><a href="#" title="대국민 공모전">대국민 공모전</a></li>
+										<li><a href="#" title="서금원 TV">서금원 TV</a></li>
+										<li><a href="#" title="고마워요 서민금융">고마워요 서민금융</a></li>
+										<li><a href="#" title="카드뉴스">카드뉴스</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./collaborative_business.html" title="협업사업">협업사업</a>
+									<ul class="dep_height">
+										<li><a href="./collaborative_business.html" title="미소금융 재단소개">미소금융 재단소개</a></li>
+										<li><a href="#" title="미소금융 지역 법인소개">미소금융 지역 법인소개</a></li>
+										<li><a href="#" title="협업기관 소개">협업기관 소개</a></li>
+										<li><a href="#" title="금융&middot;복지 양방향서비스">금융&middot;복지 양방향서비스</a></li>
+										<li class="dep2"><a href="#" title="사회적금융 사업">사회적금융 사업</a>
+											<ul>
+												<li><a href="#" title="서금원 사회적금융 사업">서금원 사회적금융 사업</a></li>
+												<li><a href="#" title="사회적금융이란">사회적금융이란</a></li>
+												<li><a href="#" title="사회적금융 중개기관">사회적금융 중개기관</a></li>
+												<li><a href="#" title="시회적금융 우수 사례">시회적금융 우수 사례</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="기부자안내">기부자안내</a></li>
+									</ul>
+								</li>
+								<li class="dep1"><a href="./institution_introduction.html" title="기관소개">기관소개</a>
+									<ul class="dep_height">
+										<li class="dep2"><a href="./institution_introduction.html" title="설립목적">설립목적</a>
+											<ul>
+												<li><a href="./institution_introduction.html" title="설립목적">설립목적</a></li>
+												<li><a href="#" title="연혁">연혁</a></li>
+												<li><a href="#" title="경영 전략">경영 전략</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="인사말">인사말</a></li>
+										<li><a href="#" title="상징&middot;캐릭터">상징&middot;캐릭터</a></li>
+										<li><a href="#" title="조직안내">조직안내</a></li>
+										<li><a href="#" title="오시는 길">오시는 길</a></li>
+										<li class="dep2"><a href="#" title="인권&middot;윤리경영">인권&middot;윤리경영</a>
+											<ul>
+												<li><a href="#" title="인권경영">인권경영</a></li>
+												<li><a href="#" title="윤리경영">윤리경영</a></li>
+												<li><a href="#" title="양성평등 임원 목표제">양성평등 임원 목표제</a></li>
+											</ul>
+										</li>
+										<li><a href="#" title="ESG 경영">ESG 경영</a></li>
+										<li class="dep2"><a href="#" title="클린신고센터">클린신고센터</a>
+											<ul>
+												<li><a href="#" title="클린신고센터">클린신고센터</a></li>
+												<li><a href="#" title="상임강사 HOT-LINE">상임강사 HOT-LINE</a></li>
+											</ul>
+										</li>
+										<li class="dep2"><a href="#" title="정보공개">정보공개</a>
+											<ul>
+												<li><a href="#" title="정보공개">정보공개</a></li>
+												<li><a href="#" title="공공데이터 개방">공공데이터 개방</a></li>
+												<li><a href="#" title="사업실명제">사업실명제</a></li>
+												<li><a href="#" title="사전정보 공개 목록">사전정보 공개 목록</a></li>
+												<li><a href="#" title="경영공시">경영공시</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			<div class="sub_container">
+				<aside class="side_menu">
+					<div class="aside_tit">금융생활</div>
+					<nav>
+						<ul>
+							<li class="active">
+								<a href="#" title="금융교육">
+									<span class="text">금융교육</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="맞춤대출">
+									<span class="text">맞춤대출</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="휴먼예금">
+									<span class="text">휴먼예금</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="신용&middot;부채관리 컨설팅">
+									<span class="text">신용&middot;부채관리 컨설팅</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="자영업 컨설팅">
+									<span class="text">자영업 컨설팅</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="취업지원">
+									<span class="text">취업지원</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="채무조정제도">
+									<span class="text">채무조정제도</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="서민금융 한눈에">
+									<span class="text">서민금융 한눈에</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" title="온라인 재무진단">
+									<span class="text">온라인 재무진단</span>
+									<span class="arrow_wrap">
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</aside>
+				<section class="section">
+					<div class="section_top">
+						<div class="section_top_left">
+							<h1>금융교육</h1>
+						</div>
+						<div class="section_top_right">
+							<ul class="icon_link">
+								<li class="print"><a href="#"><img src="../img/1.FI/section/print_black_24dp.png"
+											alt="print"></a></li>
+								<li><a href="#"><img src="../img/1.FI/section/share_black_24dp.png" alt="share"
+											class="share"></a></li>
+							</ul>
+							<ul class="path_link">
+								<li>
+									<a href="index.html">홈</a>
+								</li>
+								<li>
+									<a href="financial_instruments.html">금융생활</a>
+								</li>
+								<li class="exception">
+									<a href="#">금융교육</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section_bottom">
+						<div class="section_bottom_top">
+							<div class="top_con">
+								<h2><img src="../img/logo/logo.png" alt="logo"></h2>
+							</div>
+							<div class="bottom_con">
+								<ul>
+									<li>
+										<dl>
+											<dt>교육 목표</dt>
+											<dd>서민들의 금융이해력을 높여 금융 소비자 및 생활인으로서 적절한 의사결정을 수행할 수 있도록 지원</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>교육 대상</dt>
+											<dd><span>1. 금융교육이 필요한 서민, 청년(대학생) 등 누구나</span>
+												<span>2. 서민에 대한 전파교육이 가능한 상담사, 종사자 등</span></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>교육 주제</dt>
+											<dd>
+												<span>서민·청년(대학생)에게 꼭 필요한 금융 지식</span>
+												- 재무설계, 저축과 소비, 부채관리, 신용관리, 금융사기예방, 서민금융의 이해, 생활복지, 창업금융 등
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>교육 방법</dt>
+											<dd>
+												<span>1. 찾아가는 금융교육</span>
+												- 금융교육을 희망하는 기관 또는 단체가 원하는 시간과 장소에 전문강사가 출강
+												<span>2. 온라인 교육</span>
+												- 스마트폰 및 PC를 통해 언제, 어디서나 금융교육 수강
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="section_bottom_bottom">
+							<h2>금융교육 <span>바로가기</span></h2>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="border_gray_box">
+											<div class="text_left">
+												<h3>온라인 금융교육</h3>
+												<p>온라인 영상교육</p>
+											</div>
+											<div class="img_right">
+												<img class="icon_1" src="../img/2.FL/edu-icon-01.png" alt="icon_1">
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="border_gray_box">
+											<div class="text_left">
+												<h3>방문교육</h3>
+												<p>찾아가는 금융교육</p>
+											</div>
+											<div class="img_right">
+												<img class="icon_2" src="../img/2.FL/edu-icon-02.png" alt="icon_2">
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="border_gray_box">
+											<div class="text_left">
+												<h3>온택트교육</h3>
+												<p>실시간 화상강의</p>
+											</div>
+											<div class="img_right">
+												<img class="icon_3" src="../img/2.FL/edu-icon-03.png" alt="icon_3">
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer id="foot" class="footer_wrap">
+			<div class="menus">
+				<div class="container">
+					<div class="footer_select">
+						<label for="footSelectService_01" class="ir_so">금융ㆍ복지서비스 홈페이지 선택</label>
+						<select id="footSelectService_01">
+							<option>금융ㆍ복지서비스 포털모음</option>
+							<option value="http://fine.fss.or.kr" label="파인">파인</option>
+							<option value="https://www.sleepmoney.or.kr" label="휴면금융재산조회">휴면금융재산조회</option>
+							<option value="https://www.payinfo.or.kr" label="페이인포(계좌통합관리서비스)">페이인포(계좌통합관리서비스)</option>
+							<option value="http://www.bokjiro.go.kr" label="복지로">복지로</option>
+							<option value="http://csa.nps.or.kr" label="NPS 국민연금(노후준비서비스)">NPS 국민연금(노후준비서비스)</option>
+							<option value="http://www.epeople.go.kr" label="소극행정신고센터">소극행정신고센터</option>
+						</select>
+						<button class="footer_btn" type="button">이동</button>
+					</div>
+					<div class="footer_select">
+						<label for="footSelectService_02" class="ir_so">관련기관 홈페이지</label>
+						<select id="footSelectService_02">
+							<option>관련기관 홈페이지</option>
+							<option value="http://www.fsc.go.kr" label="금융위원회">금융위원회</option>
+							<option value="http://www.fss.or.kr" label="금융감독원">금융감독원</option>
+							<option value="http://www.ccrs.or.kr" label="페신용회복위원회">신용회복위원회</option>
+							<option value="http://www.bokgwon.go.kr" label="복권위원회">복권위원회</option>
+							<option value="http://www.happyfund.or.kr" label="국민행복기금">국민행복기금</option>
+							<option value="http://www.kdic.or.kr" label="예금보험공사">예금보험공사</option>
+							<option value="http://www.hf.go.kr" label="HF한국주택금융공사">HF한국주택금융공사</option>
+							<option value="http://www.kfb.or.kr" label="전국은행연합회">전국은행연합회</option>
+							<option value="http://www.klia.or.kr" label="생명보험협회">생명보험협회</option>
+							<option value="http://www.knia.or.kr" label="손해보험협회">손해보험협회</option>
+							<option value="http://www.gov.kr" label="정부24">정부24</option>
+							<option value="http://www.nts.go.kr" label="국세청">국세청</option>
+							<option value="http://www.nhis.or.kr" label="국민건강보험공단">국민건강보험공단</option>
+						</select>
+						<button class="footer_btn footer_btn_02" type="button">이동</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="container">
+					<div class="footer_left">
+						<p>
+							<a href="#" class="a_blue">개인정보처리방침</a>
+							<a href="#">신용정보 활용체제</a>
+							<a href="#">찾아오시는 길</a>
+						</p>
+
+						<p>
+							<address class="address">주소: 서울특별시 중구 세종대로 14(그랜드센트럴) 9~12층, 14층 (우편번호 : 04527)
+							<br>대표전화: 국번없이 1397
+							</address>
+						</p>
+
+						<p>Copyright Since 2016 Korea Inclusive Finance Agency. <br>
+							All Rights Reserved.
+						</p>
+					</div>
+					<div class="footer_right">
+						<div class="footer_right_wrap">
+							<div class="footer_wa"><a href="#"><img class="wa" src="../img/footer/wa-logo.png"
+										alt="웹접근성"></a></div>
+							<div class="footer_isms_height">
+								<div class="footer_isms"><a href="#"><img class="isms"
+											src="../img/footer/footer-isms-logo.png" alt="isms">
+										<span>[인증범위]대국민 서비스 운영(웹,모바일) <br>
+											[유효기간]2022.02.23. ~ 2025.02.22.
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+		jQuery(function ($) {
+			$(".menu>ul>li>ul>li>a").on("mouseover focus", function () {
+				$(this).parent().addClass("active").siblings().removeClass("active");;
+			});
+			/* $(".menu>ul>li>ul>li").on("mouseover focus", function () {
+				$(".dep2").parents().siblings().addClass("close");
+			}); */
+		});
+
+		jQuery(function ($) {
+			$(".dep1").on("mouseover focus", function () {
+				let a = 0;
+				a = $(".menu>ul>li>.dep_height").innerHeight();
+				$('.bg').height(a);
+			});
+			$(".dep1").on("mouseout", function () {
+				$('.bg').height(0);
+			});
+		});
+		sw = 0;
+		$('.allmenu_icon').click(function () {
+			if (sw == 0) {
+				$('.plus_menu').addClass('plus_menu_active');
+				sw = 1;
+			} else {
+				$('.plus_menu').removeClass('plus_menu_active');
+				sw = 0;
+			}
+		});
+
+		// 페이지 내의 탭 안의 탭
+		$('.aSubTabMenu').on({
+        'click':function(){
+            $('.aSubTabMenu').removeClass('active');
+            $(this).addClass('active');
+            $('.aSubTabMenu').removeAttr('title');
+            $(this).attr('title', '선택됨');
+            $('.tab_content').css('display','none');
+            $('.tab_content').eq( $('.aSubTabMenu').index(this) ).css('display','block');
+        }
+    });
+	</script>
+</body>
