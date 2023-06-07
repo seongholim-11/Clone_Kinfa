@@ -76,8 +76,7 @@ input:checked[type=checkbox] {
     -webkit-appearance: checkbox
 }
 
-
-
+.dn{display: none;}
 
 
 
