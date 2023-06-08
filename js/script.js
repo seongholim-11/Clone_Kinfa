@@ -34,6 +34,9 @@ for (let i = 0; i < headerDepth1A.length; i++) {
         let dep2ul = headerDepth1[i].querySelector('ul.dep_height').offsetHeight
         headerBg.style.height = dep2ul + "px";
     })
+    headerDepth1A[i].addEventListener('mouseout', function () {
+        headerBg.style.height = 0 + "px";
+    })
 }
 for (let j = 0; j < headerDepth2A.length; j++) {
     headerDepth2A[j].addEventListener('mouseover', function () {
@@ -46,5 +49,8 @@ for (let j = 0; j < headerDepth2A.length; j++) {
     })
     headerDepth2A[j].addEventListener('mouseout', function () {
         headerDepth2[j].classList.remove('active')
+    })
+    headerDepth2A[j].addEventListener('mouseover', function () {
+        headerBg.style.height = 0 + "px";
     })
 }

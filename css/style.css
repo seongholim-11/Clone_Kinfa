@@ -5,7 +5,7 @@ li{list-style: none}
 a{text-decoration: none;}
 
 /* Layout */
-body{font-family: 'Noto Sans KR', sans-serif; background: #ddd;}
+body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll;}
 #wrap{width: 100%;}
 /* header */
 #header{width: 100%; height: 140px; position: relative;}
@@ -76,10 +76,11 @@ body{font-family: 'Noto Sans KR', sans-serif; background: #ddd;}
 .plus_menu_sitemap li a img{width: 25px; height: 25px; position: absolute; top: 7px; right: -5px;}
 
 /* header-bottom */
-#gnb{width: 100%; height: 60px; border-bottom: 1px solid #d9d9d9; position: relative; top: 0px; left: 0;}
+/* #gnb{width: 100%; height: auto; border-bottom: 1px solid #d9d9d9; position: relative; background: #fff;}
 #nav>.bg{width: 100%; height: 0px; background: rgb(255, 255, 255); position: absolute; top: 60px; left: 0; float: left; z-index: 9;}
 #nav .menu>ul{}
-#nav .menu>ul>li{display: block; float: left; width: 14.2%; height: 60px; line-height: 60px; text-align: center; position: relative; padding-left: 18px; box-sizing: border-box;}
+#nav .menu>ul::after{content: ""; display: block; clear: both;}
+#nav .menu>ul>li{display: block; float: left; width: 14.2%; line-height: 60px; text-align: center; position: relative; padding-left: 18px; box-sizing: border-box;}
 #nav .menu>ul>li:hover>a{color: #00244b;}
 #nav .menu>ul>li>a{display: block; width: 100%; height: 100%; font-size: 1.2rem; font-weight: 500;}
 #nav .menu>ul>li>ul{width: 100%; display: block; border-right: 1px solid #d9d9d9; padding-top: 30px; z-index: 999; position: absolute; min-height: 540px;}
@@ -94,7 +95,25 @@ body{font-family: 'Noto Sans KR', sans-serif; background: #ddd;}
 #nav .menu>ul>li>ul>li.active>ul{display: block;}
 #nav .menu>ul>li>ul>li.dep2{position: relative;}
 #nav .menu>ul>li>ul>li.dep2:hover>ul::before{content: ""; width: 200px; height: 1px; background: #000; top: 0; left: 0px; position: absolute;}
-#nav .menu>ul>li>ul>li>ul>li>a{display: block; width: 100%; height: 100%; font-size: 1rem; text-align: left; line-height: 1.6rem; padding: .2rem 0; color: #5c5c5c;}
+#nav .menu>ul>li>ul>li>ul>li>a{display: block; width: 100%; height: 100%; font-size: 1rem; text-align: left; line-height: 1.6rem; padding: .2rem 0; color: #5c5c5c;} */
+
+/* header-bottom */
+.gnb{}
+#nav{}
+.menu{}
+.menu>ul{width: 1440px; margin: 0 auto;}
+.menu>ul::after{content: ""; display: block; clear: both;}
+.menu>ul>li.dep1{float: left; width: 14.2%;}
+.menu>ul>li.dep1>a.dep1a{display: block; height: 60px; line-height: 60px; text-align: center; font-size: 21px; font-weight: 500;}
+.menu>ul>li.dep1>ul.dep_height{display: block;}
+.menu>ul>li.dep1>ul.dep_height>li{padding: 6.4px 0; font-size: 16px; text-align: left; line-height: 20px;}
+.menu>ul>li.dep1>ul.dep_height>li.dep2{}
+.menu>ul>li.dep1>ul.dep_height>li.dep2>a.dep2a{}
+.menu>ul>li.dep1>ul.dep_height>li.dep2>ul{}
+.menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li{}
+.menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li>a{}
+
+
 
 /* 메인 배너 */
 .main_visual_wrap{position: relative; overflow: hidden;}
