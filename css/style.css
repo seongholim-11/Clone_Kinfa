@@ -104,9 +104,10 @@ body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll; background: #d
 .menu{}
 .menu>ul{width: 1410px; margin: 0 auto; padding: 0 15px;}
 .menu>ul::after{content: ""; display: block; clear: both;}
-.menu>ul>li.dep1{float: left; width: 14.2%;}
+.menu>ul>li.dep1{float: left; width: 14.2%; position: relative;}
 .menu>ul>li.dep1>a.dep1a{display: block; height: 60px; line-height: 60px; text-align: center; font-size: 19px; font-weight: 500;}
-.menu>ul>li.dep1>ul.dep_height{display: block; padding: 24px; border-right: 1px solid #d9d9d9; min-height: 540px;}
+.menu>ul>li.dep1>ul.dep_height{display: block; padding: 24px; border-right: 1px solid #d9d9d9; height: calc(100% - 56px);}
+.menu>ul>li.dep1:hover>ul.dep_height{background: rgba(210, 228, 255, 0.311);}
 .menu>ul>li.dep1>ul.dep_height>li{padding: 6px 0; font-size: 16px; text-align: left; line-height: 21px;}
 .menu>ul>li.dep1>ul.dep_height>li>a{font-size: 17px; padding: 3px 0; color: #5c5c5c; line-height: 27px; display: block;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2{}
@@ -117,7 +118,6 @@ body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll; background: #d
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li:first-child{padding-top: 8px;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li:last-child{padding-bottom: 8px;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li>a{display: block; padding: 8px 24px; font-size: 17px; line-height: 24px; text-indent: -8px; font-weight: normal;}
-
 
 
 /* 메인 배너 */

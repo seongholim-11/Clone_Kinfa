@@ -23,34 +23,21 @@ moreBtnIcon.addEventListener('click', function () {
 })
 
 // 헤더 nav 메뉴
-let headerDepth1 = document.querySelectorAll('#nav .dep1')
-let headerDepth2 = document.querySelectorAll('#nav .dep2')
-let headerDepth1A = document.querySelectorAll('#nav .dep1a')
-let headerDepth2A = document.querySelectorAll('#nav .dep2a')
-let headerBg = document.querySelector('#nav .bg')
+const dep2a = document.querySelectorAll('#nav .dep2')
+const dep1 = document.querySelectorAll('#nav .dep1')
+const ulHeight = document.querySelectorAll('#nav .dep1 .dep_height')
+let dep2UlHeight = 0;
 
-for (let i = 0; i < headerDepth1A.length; i++) {
-    headerDepth1A[i].addEventListener('mouseover', function () {
-        let dep2ul = headerDepth1[i].querySelector('ul.dep_height').offsetHeight
-        headerBg.style.height = dep2ul + "px";
-    })
-    headerDepth1A[i].addEventListener('mouseout', function () {
-        headerBg.style.height = 0 + "px";
+for (let i = 0; i < dep2a.length; i++) {
+    dep2a[i].addEventListener('mouseover', function () {
+        this.lastElementChild.classList.add('active');
+        })
+}
+
+for (let i = 0; i < dep2a.length; i++) {
+    dep2a[i].addEventListener('mouseout', function () {
+        this.lastElementChild.classList.remove('active');
     })
 }
-for (let j = 0; j < headerDepth2A.length; j++) {
-    headerDepth2A[j].addEventListener('mouseover', function () {
-        headerDepth2[j].classList.add('active')
-        let dep2ul = headerDepth2[j].parentNode.parentNode.querySelector('ul.dep_height').offsetHeight
-        for (let k = 0; k < headerDepth1.length; k++) {
-            headerDepth1[k].querySelector('ul.dep_height').style.height = dep2ul + "px"
-        }
-        headerBg.style.height = dep2ul + "px";
-    })
-    headerDepth2A[j].addEventListener('mouseout', function () {
-        headerDepth2[j].classList.remove('active')
-    })
-    headerDepth2A[j].addEventListener('mouseover', function () {
-        headerBg.style.height = 0 + "px";
-    })
-}
+
+
