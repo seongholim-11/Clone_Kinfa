@@ -25,13 +25,22 @@ moreBtnIcon.addEventListener('click', function () {
 // 헤더 nav 메뉴
 const dep2a = document.querySelectorAll('#nav .dep2')
 const dep1 = document.querySelectorAll('#nav .dep1')
-const ulHeight = document.querySelectorAll('#nav .dep1 .dep_height')
-let dep2UlHeight = 0;
+const ul = document.querySelectorAll('#nav .dep1 .dep_height')
+const gnbHeight = document.querySelector('#gnb')
+
 
 for (let i = 0; i < dep2a.length; i++) {
     dep2a[i].addEventListener('mouseover', function () {
+        let maxNum = dep1[0].offsetHeight;
         this.lastElementChild.classList.add('active');
-        })
+        for (let j = 0; j < dep1.length; j++) {
+            if(dep1[j].offsetHeight > maxNum) {
+                maxNum = dep1[j].offsetHeight
+            }
+            dep1[j].style.height = maxNum+"px"
+            gnbHeight.style.height = maxNum+"px"
+        }
+    })
 }
 
 for (let i = 0; i < dep2a.length; i++) {
