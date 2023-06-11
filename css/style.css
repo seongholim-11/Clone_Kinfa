@@ -296,34 +296,39 @@ ul.slide-dot li button.active{opacity: 1;}
 .popup_list .popup_track .popup_slide_box a img{width: 100%; height: 100%;}
 
  /* 서금원 소식 */
- .kinfa_contents_bottom{flex: 0 0 100%; max-width: 100%; margin-top: 3rem; height: 270px; position: relative;}
- .banner_wrap{padding: 1.5rem 2.5rem; background: #f2F5F9; width: 100%; height: 100%;}
- .kinfa_contents_banner{display: flex; flex-wrap: wrap; margin: 0 -15px; height: 100%;}
- .kinfa_contents_banner_text_btn{flex: 0 0 25%; max-width: 25%;}
- .kinfa_contents_banner_text{margin-top: 1.5rem; font-size: 1.5rem; line-height: 2rem; color: #777;}
- .kinfa_contents_banner_text span{font-size: 2rem; color: #3351a7; font-weight: 700;}
- .kinfa_contents_banner_text_btn .kinfa_contents_btn{position: absolute; bottom: 40px; display: flex; gap: 0.5rem;}
- .kinfa_contents_banner_text_btn .kinfa_contents_btn li button{overflow: hidden; line-height: 9999px; width: 3rem; height: 3rem; border: transparent; border-radius: 3rem; cursor: pointer;}
- .kinfa_contents_banner_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center; background-size: 25px;}
- .kinfa_contents_banner_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_pause{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center; background-size: 25px;}
+.kinfa_contents_bottom{flex-basis: 100%; margin-top: 48px;}
+.kinfa_contents_bottom .banner_wrap{padding: 24px 40px; background: #f2f5f9;}
+.kinfa_contents_banner{margin: 0 -15px; overflow: hidden;}
 
-.banner-page-nav{position: absolute; bottom: 0; text-align: center; overflow: hidden;}
-.banner-page-nav div{float: left;}
+.kinfa_contents_banner_text_btn{width: 310px; height: 260px; padding: 0 15px; float: left; position: relative;;}
+.kinfa_contents_banner_text{margin-top: 24px; font-size: 24px; line-height: 32px; color: #777;}
+.kinfa_contents_banner_text span{font-size: 32px; color: #3351a7; font-weight: 700; display: inline-block;}
+
+.kinfa_contents_btn{position: absolute; bottom: 40px; overflow: hidden;}
+.kinfa_contents_btn li{float: left;}
+.kinfa_contents_btn li:nth-child(1){margin-right: 8px;}
+.kinfa_contents_btn li:nth-child(2){margin-right: 8px;}
+.kinfa_contents_btn li button{overflow: hidden; line-height: 9999px; width: 48px; height: 48px; border: transparent; border-radius: 50%;}
+.kinfa_contents_btn li button.kinfa_contents_banner_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center;
+background-size: 25px;}
+.kinfa_contents_btn li button.kinfa_contents_banner_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center;
+    background-size: 10px;}
+.kinfa_contents_btn li button.kinfa_contents_banner_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center;
+    background-size: 25px;}
+
+.banner-page-nav{position: absolute; bottom: 0; overflow: hidden;}
+.banner-page-nav div{float: left; text-align: center;}
 .banner-page-nav .now-page{color: #666; width: 30px; height: 30px; font-size: 21px; font-weight: 500;}
 .banner-page-nav .and{margin: 12px 8px; width: 5px; height: 5px; background: #888; border-radius: 50%;}
 .banner-page-nav .all-page{color: #666; width: 30px; height: 30px; font-size: 21px; font-weight: 500;}
 
- .kinfa_contents_banner_slide{flex: 0 0 75%; max-width: 75%;}
- .banner_slide_wrap{}
- .banner_slide_list{}
- .banner_slide_track{}
- .banner_slide_box{position: absolute; height: 100%; transition: 0.5s; right: 0;}
- .banner_slide_box a{display: block;}
- .banner_slide_box a .img_wrap{height: 100%;}
- .banner_slide_box a .img_wrap img{width: 100%;}
+.kinfa_contents_banner_slide{float: left; width: 990px; height: 260px; position: relative;}
+.banner_slide_track{width: 100%;}
+.banner_slide_box{width: 100%; position: absolute; opacity: 0; transition: 0.3s;}
+.banner_slide_box.active{opacity: 1;}
+.banner_slide_box a{display: block; width: 100%;}
+.banner_slide_box a .img_wrap{width: 100%;}
+.banner_slide_box a .img_wrap img{width: 100%;}
 
 
  /* sns wrap */

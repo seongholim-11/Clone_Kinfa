@@ -358,3 +358,51 @@ popup_next.addEventListener('click', function () {
 
 // -----------------------------------------------------------------------------------
 
+// banner
+const banner_slide_track = document.querySelector('.banner_slide_track');
+const banner_slide_box = document.querySelectorAll('.banner_slide_box');
+const kinfa_contents_banner_prev = document.querySelector('.kinfa_contents_banner_prev');
+const kinfa_contents_banner_next = document.querySelector('.kinfa_contents_banner_next');
+const now_page = document.querySelector('.banner-page-nav .now-page');
+
+let cbannerInterval;
+let cbannerIndex = 0;
+
+cbannerAutoSlide();
+
+function cbannerAutoSlide() {
+    cbannerInterval = setInterval(() => {
+        cupdateBanner(1);
+    }, 3000);
+}
+
+function cupdateBanner(direction) {
+    banner_slide_box[cbannerIndex].classList.remove('active');
+    cbannerIndex = (cbannerIndex + direction + banner_slide_box.length) % banner_slide_box.length;
+    console.log("🚀 ~ file: script.js:382 ~ cupdateBanner ~ cbannerIndex:", cbannerIndex)
+    banner_slide_box[cbannerIndex].classList.add('active');
+    now_page.innerHTML = '0' + (cbannerIndex+1)
+
+}
+
+function cstopAutoSlide() {
+    clearInterval(cbannerInterval);
+}
+
+function chandleNextClick() {
+    cstopAutoSlide();
+    cupdateBanner(1);
+}
+
+function chandlePrevClick() {
+    cstopAutoSlide();
+    cupdateBanner(-1);
+}
+
+kinfa_contents_banner_next.addEventListener('mouseover', cstopAutoSlide);
+kinfa_contents_banner_next.addEventListener('mouseout', cbannerAutoSlide);
+kinfa_contents_banner_next.addEventListener('click', chandleNextClick);
+
+kinfa_contents_banner_prev.addEventListener('mouseover', cstopAutoSlide);
+kinfa_contents_banner_prev.addEventListener('mouseout', cbannerAutoSlide);
+kinfa_contents_banner_prev.addEventListener('click', chandlePrevClick);
