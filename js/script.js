@@ -54,4 +54,205 @@ for (let i = 0; i < dep2a.length; i++) {
     })
 } */
 
+// -----------------------------------------------------------------------------------
 
+// banner
+const banner_track = document.querySelector('.banner_track');
+const banner_slide = document.querySelectorAll('.banner_slide');
+const banner_dot = document.querySelectorAll('ul.slide-dot li button');
+const banner_prev = document.querySelector('.main_visual_prev');
+const banner_next = document.querySelector('.main_visual_next');
+
+let bannerInterval;
+let bannerIndex = 0;
+
+banner_dot[0].classList.add('active');
+bannerAutoSlide();
+
+function bannerAutoSlide() {
+  bannerInterval = setInterval(() => {
+    updateBanner(1);
+  }, 6000);
+}
+
+function updateBanner(direction) {
+  banner_slide[bannerIndex].classList.remove('active');
+  banner_dot[bannerIndex].classList.remove('active');
+  bannerIndex = (bannerIndex + direction + banner_slide.length) % banner_slide.length;
+  banner_slide[bannerIndex].classList.add('active');
+  banner_dot[bannerIndex].classList.add('active');
+}
+
+function stopAutoSlide() {
+  clearInterval(bannerInterval);
+}
+
+function handleNextClick() {
+  stopAutoSlide();
+  updateBanner(1);
+}
+
+function handlePrevClick() {
+  stopAutoSlide();
+  updateBanner(-1);
+}
+
+function handleDotClick(idx) {
+  return () => {
+    stopAutoSlide();
+    banner_slide[bannerIndex].classList.remove('active');
+    banner_dot[bannerIndex].classList.remove('active');
+    bannerIndex = idx;
+    banner_slide[bannerIndex].classList.add('active');
+    banner_dot[bannerIndex].classList.add('active');
+  };
+}
+
+banner_next.addEventListener('mouseover', stopAutoSlide);
+banner_next.addEventListener('mouseout', bannerAutoSlide);
+banner_next.addEventListener('click', handleNextClick);
+
+banner_prev.addEventListener('mouseover', stopAutoSlide);
+banner_prev.addEventListener('mouseout', bannerAutoSlide);
+banner_prev.addEventListener('click', handlePrevClick);
+
+for (let i = 0; i < banner_dot.length; i++) {
+  banner_dot[i].addEventListener('mouseover', stopAutoSlide);
+  banner_dot[i].addEventListener('mouseout', bannerAutoSlide);
+  banner_dot[i].addEventListener('click', handleDotClick(i));
+}
+
+// 위 코드 최적화 
+/* const banner_track = document.querySelector('.banner_track')
+const banner_slide = document.querySelectorAll('.banner_slide')
+
+const banner_dot = document.querySelectorAll('ul.slide-dot li button')
+banner_dot[0].classList.add('active')
+
+const banner_prev = document.querySelector('.main_visual_prev')
+const banner_next = document.querySelector('.main_visual_next')
+
+let bannerInterval = 0;
+let bannerIndex = 0;
+let i = 0;
+let idx = 0;
+
+bannerAutoSlide()
+
+function bannerAutoSlide() {
+    setTimeout(function () {
+        for (let j = 0; j < banner_slide.length; j++) {
+            let classes = banner_slide[j].classList;
+            if (classes.contains('active')) {
+                bannerIndex = j;
+            }
+        }
+
+        banner_slide.forEach(element => {
+            element.classList.remove('active')
+        });
+        banner_dot.forEach(dot => {
+            dot.classList.remove('active')
+        });
+        banner_slide[bannerIndex].classList.add('active')
+        banner_dot[bannerIndex].classList.add('active')
+        bannerIndex++
+        if (bannerIndex == 3) { bannerIndex = 0 }
+    }, 6000)
+    bannerInterval = setInterval(function () {
+        for (let j = 0; j < banner_slide.length; j++) {
+            let classes = banner_slide[j].classList;
+            if (classes.contains('active')) {
+                bannerIndex = j;
+            }
+        }
+
+        banner_slide.forEach(element => {
+            element.classList.remove('active')
+        });
+        banner_dot.forEach(dot => {
+            dot.classList.remove('active')
+        });
+        bannerIndex++
+        if (bannerIndex == 3) { bannerIndex = 0 }
+        banner_slide[bannerIndex].classList.add('active')
+        banner_dot[bannerIndex].classList.add('active')
+    }, 6000)
+}
+
+banner_next.addEventListener('mouseover', function () {
+    clearInterval(bannerInterval)
+})
+banner_next.addEventListener('mouseout', function () {
+    bannerAutoSlide()
+})
+banner_prev.addEventListener('mouseover', function () {
+    clearInterval(bannerInterval)
+})
+banner_prev.addEventListener('mouseout', function () {
+    bannerAutoSlide()
+})
+
+
+banner_next.addEventListener('click', function () {
+    for (let j = 0; j < banner_slide.length; j++) {
+        let classes = banner_slide[j].classList;
+        if (classes.contains('active')) {
+            bannerIndex = j;
+        }
+    }
+    banner_slide.forEach(element => {
+        element.classList.remove('active')
+    });
+    banner_dot.forEach(dot => {
+        dot.classList.remove('active')
+    });
+    bannerIndex++
+    if (bannerIndex == 3) { bannerIndex = 0 }
+    banner_dot[bannerIndex].classList.add('active')
+    banner_slide[bannerIndex].classList.add('active')
+})
+
+banner_prev.addEventListener('click', function () {
+    for (let j = 0; j < banner_slide.length; j++) {
+        let classes = banner_slide[j].classList;
+        if (classes.contains('active')) {
+            bannerIndex = j;
+        }
+    }
+    banner_slide.forEach(element => {
+        element.classList.remove('active')
+    });
+    banner_dot.forEach(dot => {
+        dot.classList.remove('active')
+    });
+    bannerIndex--
+    if (bannerIndex == -1) { bannerIndex = 2 }
+    banner_dot[bannerIndex].classList.add('active')
+    banner_slide[bannerIndex].classList.add('active')
+})
+
+function dot_click(idx) {
+    banner_dot[idx].onclick = function () {
+        banner_slide.forEach(element => {
+            element.classList.remove('active')
+        });
+        banner_dot.forEach(dot => {
+            dot.classList.remove('active')
+        });
+        banner_slide[idx].classList.add('active')
+        banner_dot[idx].classList.add('active')
+    };
+}
+
+for (let k = 0; k < banner_dot.length; k++) {
+    dot_click(k);
+    banner_dot[k].addEventListener('mouseover', function () {
+        clearInterval(bannerInterval)
+    })
+    banner_dot[k].addEventListener('mouseout', function () {
+        bannerAutoSlide()
+    })
+}  */
+
+// -----------------------------------------------------------------------------------

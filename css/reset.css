@@ -27,7 +27,7 @@ img,fieldset {border:0 none;}
 button {border: 0;}
 
 /* 반응형 */
-video,img {width: 100%;}
+/* video,img {width: 100%;} */
 
 /* clearfix */
 .cf{*zoom:1;}
