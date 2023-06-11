@@ -227,6 +227,7 @@ ul.slide-dot li button.active{opacity: 1;}
 .kinfa_contents_left .new_wrap ul>li:nth-child(1){padding-right: 15px;}
 .kinfa_contents_left .new_wrap ul>li:nth-child(2){padding-left: 15px;}
 .kinfa_contents_left .new_wrap ul>li>div>a .new_thum{margin-top: 0.5rem; position: relative; overflow: hidden; width: 100%;}
+.kinfa_contents_left .new_wrap ul>li>div>a .new_thum img{width: 100%; height: 100%;}
 .kinfa_contents_left .new_wrap ul>li>div>a .new_text .new_tit{width: 100%; height: 6rem; font-size: 1.3rem; line-height: 1.8rem; font-weight: 700; margin: 0.5rem 0 1rem 0;}
 .kinfa_contents_left .new_wrap ul>li>div>a .new_text .new_date{font-size: 1.2rem; color: #999;}
 
@@ -285,29 +286,45 @@ ul.slide-dot li button.active{opacity: 1;}
 .popup_slide_wrap{position: relative; margin-top: 3rem; width: 100%; height: 400px; overflow: hidden}
 .popup_slide_wrap::after{content: ""; position: absolute; width: 100%; height: 3rem; background: #333; opacity: .3; display: block; z-index: 9999; bottom: 0;}
 .popup_slide_wrap button{z-index: 999999; position: absolute; bottom: 0; line-height: 9999px; width: 3rem; height: 3rem; border:transparent; border-radius: 0.3rem; cursor: pointer;}
-.popup_slide_wrap .popup_slick_prev{background: url(../img/icon/arrow-prev.png) no-repeat center; background-size: 25px; left: calc(50% - 70px);}
-.popup_slide_wrap .popup_slick_btn{width: 2rem; height: 2rem; left: calc(50% - 16px); border: 1px solid #fff; border-radius: 5rem; position: absolute; bottom: 9px; background: url(../img/icon/icon-pause-w.png) no-repeat center center; background-size: 30px;}
-.popup_slide_wrap .popup_slick_play{background: url(../img/icon/icon-pause-w.png) no-repeat center center; background-size: 30px;}
-.popup_slide_wrap .popup_slick_pause{background: url(../img/icon/play.png) no-repeat center center; background-size: 10px;}
-.popup_slide_wrap .popup_slick_next{background: url(../img/icon/arrow-next.png) no-repeat center; background-size: 25px; right: calc(50% - 70px); }
-.popup_slick_list .popup_slick_track .popup_slide_box{width: 690px; height: 400px; display: block;}
-.popup_slick_list .popup_slick_track .popup_slide_box a img{width: 100%; height: 100%;}
+.popup_slide_wrap .popup_prev{background: url(../img/icon/arrow-prev.png) no-repeat center; background-size: 25px; left: calc(50% - 70px);}
+.popup_slide_wrap .popup_btn{width: 2rem; height: 2rem; left: calc(50% - 16px); border: 1px solid #fff; border-radius: 5rem; position: absolute; bottom: 9px; background: url(../img/icon/icon-pause-w.png) no-repeat center center; background-size: 30px;}
+.popup_slide_wrap .popup_btn.popup_play{background: url(../img/icon/icon-play-w.png) no-repeat center center; background-size: 30px;}
+.popup_slide_wrap .popup_next{background: url(../img/icon/arrow-next.png) no-repeat center; background-size: 25px; right: calc(50% - 70px); }
+.popup_list{width: 690px; height: 400px; overflow: hidden;}
+.popup_list .popup_track{width: 4830px; height: 100%; position: relative; transition: 0.3s; left: 0px;}
+.popup_list .popup_track .popup_slide_box{width: 690px; height: 400px; display: block; float: left;}
+.popup_list .popup_track .popup_slide_box a img{width: 100%; height: 100%;}
 
  /* 서금원 소식 */
  .kinfa_contents_bottom{flex: 0 0 100%; max-width: 100%; margin-top: 3rem; height: 270px; position: relative;}
- .banner_wrap{padding: 1.5rem 2.5rem; background: #f2F5F9;}
- .kinfa_contents_banner{display: flex; flex-wrap: wrap; margin: 0 -15px;}
+ .banner_wrap{padding: 1.5rem 2.5rem; background: #f2F5F9; width: 100%; height: 100%;}
+ .kinfa_contents_banner{display: flex; flex-wrap: wrap; margin: 0 -15px; height: 100%;}
  .kinfa_contents_banner_text_btn{flex: 0 0 25%; max-width: 25%;}
  .kinfa_contents_banner_text{margin-top: 1.5rem; font-size: 1.5rem; line-height: 2rem; color: #777;}
  .kinfa_contents_banner_text span{font-size: 2rem; color: #3351a7; font-weight: 700;}
- .kinfa_contents_banner_text_btn .kinfa_contents_banner_btn{position: absolute; bottom: 40px; display: flex; gap: 0.5rem;}
- .kinfa_contents_banner_text_btn .kinfa_contents_banner_btn li button{overflow: hidden; line-height: 9999px; width: 3rem; height: 3rem; border: transparent; border-radius: 3rem; cursor: pointer;}
- .kinfa_contents_banner_slick_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center; background-size: 25px;}
- .kinfa_contents_banner_slick_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_slick_play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_slick_pause{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
- .kinfa_contents_banner_slick_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center; background-size: 25px;}
+ .kinfa_contents_banner_text_btn .kinfa_contents_btn{position: absolute; bottom: 40px; display: flex; gap: 0.5rem;}
+ .kinfa_contents_banner_text_btn .kinfa_contents_btn li button{overflow: hidden; line-height: 9999px; width: 3rem; height: 3rem; border: transparent; border-radius: 3rem; cursor: pointer;}
+ .kinfa_contents_banner_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center; background-size: 25px;}
+ .kinfa_contents_banner_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
+ .kinfa_contents_banner_play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center; background-size: 10px;}
+ .kinfa_contents_banner_pause{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
+ .kinfa_contents_banner_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center; background-size: 25px;}
+
+.banner-page-nav{position: absolute; bottom: 0; text-align: center; overflow: hidden;}
+.banner-page-nav div{float: left;}
+.banner-page-nav .now-page{color: #666; width: 30px; height: 30px; font-size: 21px; font-weight: 500;}
+.banner-page-nav .and{margin: 12px 8px; width: 5px; height: 5px; background: #888; border-radius: 50%;}
+.banner-page-nav .all-page{color: #666; width: 30px; height: 30px; font-size: 21px; font-weight: 500;}
+
  .kinfa_contents_banner_slide{flex: 0 0 75%; max-width: 75%;}
+ .banner_slide_wrap{}
+ .banner_slide_list{}
+ .banner_slide_track{}
+ .banner_slide_box{position: absolute; height: 100%; transition: 0.5s; right: 0;}
+ .banner_slide_box a{display: block;}
+ .banner_slide_box a .img_wrap{height: 100%;}
+ .banner_slide_box a .img_wrap img{width: 100%;}
+
 
  /* sns wrap */
  .sns_top{background: #053982; padding: 2rem 0 4rem 0;}

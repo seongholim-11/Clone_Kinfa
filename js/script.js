@@ -70,42 +70,42 @@ banner_dot[0].classList.add('active');
 bannerAutoSlide();
 
 function bannerAutoSlide() {
-  bannerInterval = setInterval(() => {
-    updateBanner(1);
-  }, 6000);
+    bannerInterval = setInterval(() => {
+        updateBanner(1);
+    }, 6000);
 }
 
 function updateBanner(direction) {
-  banner_slide[bannerIndex].classList.remove('active');
-  banner_dot[bannerIndex].classList.remove('active');
-  bannerIndex = (bannerIndex + direction + banner_slide.length) % banner_slide.length;
-  banner_slide[bannerIndex].classList.add('active');
-  banner_dot[bannerIndex].classList.add('active');
+    banner_slide[bannerIndex].classList.remove('active');
+    banner_dot[bannerIndex].classList.remove('active');
+    bannerIndex = (bannerIndex + direction + banner_slide.length) % banner_slide.length;
+    banner_slide[bannerIndex].classList.add('active');
+    banner_dot[bannerIndex].classList.add('active');
 }
 
 function stopAutoSlide() {
-  clearInterval(bannerInterval);
+    clearInterval(bannerInterval);
 }
 
 function handleNextClick() {
-  stopAutoSlide();
-  updateBanner(1);
+    stopAutoSlide();
+    updateBanner(1);
 }
 
 function handlePrevClick() {
-  stopAutoSlide();
-  updateBanner(-1);
+    stopAutoSlide();
+    updateBanner(-1);
 }
 
 function handleDotClick(idx) {
-  return () => {
-    stopAutoSlide();
-    banner_slide[bannerIndex].classList.remove('active');
-    banner_dot[bannerIndex].classList.remove('active');
-    bannerIndex = idx;
-    banner_slide[bannerIndex].classList.add('active');
-    banner_dot[bannerIndex].classList.add('active');
-  };
+    return () => {
+        stopAutoSlide();
+        banner_slide[bannerIndex].classList.remove('active');
+        banner_dot[bannerIndex].classList.remove('active');
+        bannerIndex = idx;
+        banner_slide[bannerIndex].classList.add('active');
+        banner_dot[bannerIndex].classList.add('active');
+    };
 }
 
 banner_next.addEventListener('mouseover', stopAutoSlide);
@@ -117,9 +117,9 @@ banner_prev.addEventListener('mouseout', bannerAutoSlide);
 banner_prev.addEventListener('click', handlePrevClick);
 
 for (let i = 0; i < banner_dot.length; i++) {
-  banner_dot[i].addEventListener('mouseover', stopAutoSlide);
-  banner_dot[i].addEventListener('mouseout', bannerAutoSlide);
-  banner_dot[i].addEventListener('click', handleDotClick(i));
+    banner_dot[i].addEventListener('mouseover', stopAutoSlide);
+    banner_dot[i].addEventListener('mouseout', bannerAutoSlide);
+    banner_dot[i].addEventListener('click', handleDotClick(i));
 }
 
 // 위 코드 최적화 
@@ -256,3 +256,105 @@ for (let k = 0; k < banner_dot.length; k++) {
 }  */
 
 // -----------------------------------------------------------------------------------
+
+/* popup */
+
+const popup_track = document.querySelector('.popup_track');
+const popup_slide_box = document.querySelector('.popup_slide_box');
+const popup_btn = document.querySelector('.popup_btn');
+const popup_prev = document.querySelector('.popup_prev');
+const popup_next = document.querySelector('.popup_next');
+let intervalPopup;
+let position = 0;
+let pCount = 1;
+let popup_btn_OnOff = 0;
+let popup_prev_count = 0;
+let popup_next_count = 0;
+
+popupSlide()
+
+// popupSlide() 함수 만들기
+function popupSlide() {
+    intervalPopup = setInterval(function () {
+        position = (-690) * pCount;
+
+        // 요소의 스타일 속성 변경
+        popup_track.style.left = position + 'px';
+
+        pCount++
+
+        // 애니메이션 종료 조건 확인
+        if (pCount >= 7) {
+            pCount = 0;
+        }
+    }, 5000);
+}
+
+popup_btn.addEventListener('click', function () {
+    if (popup_btn_OnOff == 0) {
+        popup_btn.classList.add('popup_play')
+        clearInterval(intervalPopup);
+        popup_btn_OnOff = 1;
+    } else {
+        popup_btn.classList.remove('popup_play')
+        popupSlide()
+        popup_btn_OnOff = 0;
+    }
+})
+popup_prev.addEventListener('mouseover', function () {
+    clearInterval(intervalPopup);
+})
+popup_prev.addEventListener('mouseout', function () {
+    popupSlide();
+})
+popup_next.addEventListener('mouseover', function () {
+    clearInterval(intervalPopup);
+})
+popup_next.addEventListener('mouseout', function () {
+    popupSlide();
+})
+
+popup_prev.addEventListener('click', function () {
+    if (popup_prev_count == 0 && pCount == 1) {
+        pCount = 6
+        position = (-690) * pCount;
+        popup_track.style.left = position + 'px';
+        popup_prev_count = 1;
+    } else {
+        popup_prev_count = 1;
+        pCount--
+        position = (-690) * pCount;
+        if (position > 0) {
+            pCount = 6;
+            position = (-690) * pCount;
+        }
+        popup_track.style.left = position + 'px';
+        if (pCount <= -1) {
+            pCount = 6;
+        }
+    }
+
+})
+
+popup_next.addEventListener('click', function () {
+    if (popup_next_count == 0 && pCount == 1) {
+        pCount = 1;
+        position = (-690) * pCount;
+        popup_track.style.left = position + 'px';
+        popup_next_count = 1
+    } else {
+        pCount++
+        position = (-690) * pCount;
+        if (position == -4830) {
+            pCount = 0;
+            position = (-690) * pCount;
+        }
+        popup_track.style.left = position + 'px';
+        if (pCount >= 7) {
+            pCount = 0;
+        }
+    }
+})
+
+// -----------------------------------------------------------------------------------
+
