@@ -358,7 +358,7 @@ popup_next.addEventListener('click', function () {
 
 // -----------------------------------------------------------------------------------
 
-// banner
+// 서금원소식
 const banner_slide_track = document.querySelector('.banner_slide_track');
 const banner_slide_box = document.querySelectorAll('.banner_slide_box');
 const kinfa_contents_banner_prev = document.querySelector('.kinfa_contents_banner_prev');
