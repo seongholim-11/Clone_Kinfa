@@ -31,22 +31,27 @@ const gnbHeight = document.querySelector('#gnb')
 
 for (let i = 0; i < dep2a.length; i++) {
     dep2a[i].addEventListener('mouseover', function () {
-        let maxNum = dep1[0].offsetHeight;
+        var max_h = 0;
         this.lastElementChild.classList.add('active');
-        for (let j = 0; j < dep1.length; j++) {
-            if(dep1[j].offsetHeight > maxNum) {
-                maxNum = dep1[j].offsetHeight
+        dep1.forEach(function (li) {
+            var h = parseInt(getComputedStyle(li).height);
+
+            if (max_h < h) {
+                max_h = h;
+                console.log("🚀 ~ file: script.js:41 ~ max_h:", max_h)
             }
-            dep1[j].style.height = maxNum+"px"
-            gnbHeight.style.height = maxNum+"px"
-        }
+        });
+
+        dep1.forEach(function (li) {
+            li.style.height = max_h + "px"; // Set the maximum height
+        });
     })
 }
 
-for (let i = 0; i < dep2a.length; i++) {
+/* for (let i = 0; i < dep2a.length; i++) {
     dep2a[i].addEventListener('mouseout', function () {
         this.lastElementChild.classList.remove('active');
     })
-}
+} */
 
 
