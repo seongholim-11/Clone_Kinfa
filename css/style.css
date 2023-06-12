@@ -150,7 +150,7 @@ body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll; background: #d
 ul.slide-dot{position: absolute; top: -2px; left: 16px; transform: translateY(50%);}
 ul.slide-dot li{float: left;}
 ul.slide-dot li button{overflow: hidden; width: 15px; height: 15px; margin: 0 5px; border-radius: 50%; border: transparent; line-height: 100px; opacity: 0.5; background: #fff; cursor: pointer;}
-.slide-state{position: absolute; top: 0; left: 100px; width: 30px; height: 30px; border: transparent;}
+.slide-state{position: absolute; top: 0; left: 100px; width: 30px; height: 30px; border: transparent; cursor: pointer;}
 ul.slide-dot li button.active{opacity: 1;}
 .slide-state.stop{background: url(../img/main/icon-pause-b.png) no-repeat center; background-size: 30px;}
 .slide-state.play{background: url(../img/main/icon-play-b.png) no-repeat center; background-size: 30px;}
@@ -308,11 +308,12 @@ ul.slide-dot li button.active{opacity: 1;}
 .kinfa_contents_btn li{float: left;}
 .kinfa_contents_btn li:nth-child(1){margin-right: 8px;}
 .kinfa_contents_btn li:nth-child(2){margin-right: 8px;}
-.kinfa_contents_btn li button{overflow: hidden; line-height: 9999px; width: 48px; height: 48px; border: transparent; border-radius: 50%;}
+.kinfa_contents_btn li button{overflow: hidden; line-height: 9999px; width: 48px; height: 48px; border: transparent; border-radius: 50%; cursor: pointer;}
 .kinfa_contents_btn li button.kinfa_contents_banner_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center;
 background-size: 25px;}
-.kinfa_contents_btn li button.kinfa_contents_banner_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center;
-    background-size: 10px;}
+.kinfa_contents_btn li button.kinfa_contents_banner_btn{ background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
+.kinfa_contents_btn li button.kinfa_contents_banner_btn.stop{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center; background-size: 10px;}
+.kinfa_contents_btn li button.kinfa_contents_banner_btn.play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center; background-size: 10px;}
 .kinfa_contents_btn li button.kinfa_contents_banner_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center;
     background-size: 25px;}
 

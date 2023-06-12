@@ -1,4 +1,5 @@
 // 헤더 더보기메뉴
+// 변수 선언
 let moreBtn = document.querySelector('.allmenu_btn')
 let moreBtnIcon = document.querySelector('.allmenu_icon')
 let moreBtnLine = document.querySelectorAll('.allmenu_btn span')
@@ -6,8 +7,10 @@ let moreBtntext = document.querySelector('.allmenu_btn .state')
 let plusMenu = document.querySelector('.plus_menu')
 let moreBtnNum = 0;
 
+// 햄버거 메뉴를 클릭하면
 moreBtnIcon.addEventListener('click', function () {
     if (moreBtnNum == 0) {
+
         moreBtnIcon.classList.remove('inactive')
         moreBtnIcon.classList.add('active')
         plusMenu.style.display = 'block'
@@ -62,14 +65,18 @@ const banner_slide = document.querySelectorAll('.banner_slide');
 const banner_dot = document.querySelectorAll('ul.slide-dot li button');
 const banner_prev = document.querySelector('.main_visual_prev');
 const banner_next = document.querySelector('.main_visual_next');
+const banner_state = document.querySelector('.slide-state');
 
 let bannerInterval;
 let bannerIndex = 0;
+let bannerStateIndex = 0;
 
 banner_dot[0].classList.add('active');
 bannerAutoSlide();
 
 function bannerAutoSlide() {
+    banner_state.classList.remove('play')
+    banner_state.classList.add('stop')
     bannerInterval = setInterval(() => {
         updateBanner(1);
     }, 6000);
@@ -84,6 +91,8 @@ function updateBanner(direction) {
 }
 
 function stopAutoSlide() {
+    banner_state.classList.remove('stop')
+    banner_state.classList.add('play')
     clearInterval(bannerInterval);
 }
 
@@ -111,6 +120,17 @@ function handleDotClick(idx) {
 banner_next.addEventListener('mouseover', stopAutoSlide);
 banner_next.addEventListener('mouseout', bannerAutoSlide);
 banner_next.addEventListener('click', handleNextClick);
+
+banner_state.addEventListener('click', function () {
+    if (bannerStateIndex == 0) {
+        stopAutoSlide();
+        bannerStateIndex = 1;
+    } else {
+
+        bannerAutoSlide();
+        bannerStateIndex = 0;
+    }
+});
 
 banner_prev.addEventListener('mouseover', stopAutoSlide);
 banner_prev.addEventListener('mouseout', bannerAutoSlide);
@@ -362,15 +382,19 @@ popup_next.addEventListener('click', function () {
 const banner_slide_track = document.querySelector('.banner_slide_track');
 const banner_slide_box = document.querySelectorAll('.banner_slide_box');
 const kinfa_contents_banner_prev = document.querySelector('.kinfa_contents_banner_prev');
+const kinfa_contents_banner_btn = document.querySelector('.kinfa_contents_banner_btn');
 const kinfa_contents_banner_next = document.querySelector('.kinfa_contents_banner_next');
 const now_page = document.querySelector('.banner-page-nav .now-page');
 
 let cbannerInterval;
 let cbannerIndex = 0;
+let contentsStateIndex = 0;
 
 cbannerAutoSlide();
 
 function cbannerAutoSlide() {
+    kinfa_contents_banner_btn.classList.remove('play')
+    kinfa_contents_banner_btn.classList.add('stop')
     cbannerInterval = setInterval(() => {
         cupdateBanner(1);
     }, 3000);
@@ -381,11 +405,13 @@ function cupdateBanner(direction) {
     cbannerIndex = (cbannerIndex + direction + banner_slide_box.length) % banner_slide_box.length;
     console.log("🚀 ~ file: script.js:382 ~ cupdateBanner ~ cbannerIndex:", cbannerIndex)
     banner_slide_box[cbannerIndex].classList.add('active');
-    now_page.innerHTML = '0' + (cbannerIndex+1)
+    now_page.innerHTML = '0' + (cbannerIndex + 1)
 
 }
 
 function cstopAutoSlide() {
+    kinfa_contents_banner_btn.classList.remove('stop')
+    kinfa_contents_banner_btn.classList.add('play')
     clearInterval(cbannerInterval);
 }
 
@@ -399,10 +425,16 @@ function chandlePrevClick() {
     cupdateBanner(-1);
 }
 
-kinfa_contents_banner_next.addEventListener('mouseover', cstopAutoSlide);
-kinfa_contents_banner_next.addEventListener('mouseout', cbannerAutoSlide);
 kinfa_contents_banner_next.addEventListener('click', chandleNextClick);
 
-kinfa_contents_banner_prev.addEventListener('mouseover', cstopAutoSlide);
-kinfa_contents_banner_prev.addEventListener('mouseout', cbannerAutoSlide);
+kinfa_contents_banner_btn.addEventListener('click', function () {
+    if (contentsStateIndex == 0) {
+        cstopAutoSlide();
+        contentsStateIndex = 1;
+    } else {
+        cbannerAutoSlide();
+        contentsStateIndex = 0;
+    }
+});
+
 kinfa_contents_banner_prev.addEventListener('click', chandlePrevClick);
