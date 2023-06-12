@@ -790,7 +790,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="kinfa_sns_wrap dn">
+			<div class="kinfa_sns_wrap">
 				<div class="sns_top">
 					<div class="container">
 						<div class="sns_top_tit">대국민 소통</div>
@@ -836,7 +836,7 @@
 				<div class="sns_bottom">
 					<div class="container">
 						<div class="sns_bottom_wrap">
-							<div class="sns_bottom_width">
+							<div class="sns_bottom_width you-bottom">
 								<div class="sns_bottom_top">
 									<div class="sns_bottom_header">
 										<div class="sns_bottom_tit">유튜브</div>
@@ -868,16 +868,22 @@
 											</a>
 											<div class="sns_slide_tit">슬금생 신용점수가 낮아도 신용점수 관리하는 방법</div>
 										</div>
-
 									</div>
 								</div>
-								<div class="sns_slick_button">
-									<button type="button" class="sns_slick_prev ir_so you_prev">이전</button>
-									<button type="button" class="sns_slick_btn ir_so you_btn">이전</button>
-									<button type="button" class="sns_slick_next ir_so you_next">이전</button>
+								<ul class="sns-dot">
+									<li><button>1</button></li>
+									<li><button>2</button></li>
+									<li><button>3</button></li>
+								</ul>
+								<div class="sns_button_wrap">
+									<div class="sns_button">
+										<button type="button" class="sns_prev you_prev">이전</button>
+										<button type="button" class="sns_btn you_btn">재생, 멈춤</button>
+										<button type="button" class="sns_next you_next">다음</button>
+									</div>
 								</div>
 							</div>
-							<div class="sns_bottom_width">
+							<div class="sns_bottom_width card-bottom">
 								<div class="sns_bottom_top">
 									<div class="sns_bottom_header">
 										<div class="sns_bottom_tit">카드뉴스</div>
@@ -908,10 +914,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="sns_slick_button">
-									<button type="button" class="sns_slick_prev ir_so card_prev">이전</button>
-									<button type="button" class="sns_slick_btn ir_so card_btn">재생</button>
-									<button type="button" class="sns_slick_next ir_so card_next">다음</button>
+								<ul class="sns-dot">
+									<li><button>1</button></li>
+									<li><button>2</button></li>
+									<li><button>3</button></li>
+								</ul>
+								<div class="sns_button_wrap">
+									<div class="sns_button">
+										<button type="button" class="sns_prev you_prev">이전</button>
+										<button type="button" class="sns_btn you_btn">재생, 멈춤</button>
+										<button type="button" class="sns_next you_next">다음</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1107,127 +1120,6 @@
 			</div>
 		</footer>
 	</div>
-
-	<!-- 	<script>
-		jQuery(function ($) {
-			$(".menu>ul>li>ul>li>a").on("mouseover focus", function () {
-				$(this).parent().addClass("active").siblings().removeClass("active");;
-			});
-			/* $(".menu>ul>li>ul>li").on("mouseover focus", function () {
-				$(".dep2").parents().siblings().addClass("close");
-			}); */
-		});
-
-		jQuery(function ($) {
-			$(".menu>ul>li").on("mouseover focus", function () {
-				let a = 0;
-				a = $(".menu>ul>li .dep_height").innerHeight();
-				console.log(a);
-				$('.bg').height(a);
-			});
-			$(".menu>ul>li").on("mouseout", function () {
-				$('.bg').height(0);
-			});
-		});
-	</script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>
-
-	<script type="text/javascript">
-		$('.slick_track').slick({
-			dots: false,
-			infinite: true,
-			speed: 500,
-			fade: true,
-			cssEase: 'linear',
-			prevArrow: $('.main_visual_prev'),
-			nextArrow: $('.main_visual_next'),
-			autoplay: false
-		});
-		$('.popup_slick_track').slick({
-			infinite: true,
-			speed: 500,
-			prevArrow: $('.popup_slick_prev'),
-			nextArrow: $('.popup_slick_next'),
-			autoplay: true
-		});
-		var sw = 0;
-		$('.popup_slick_btn').click(function () {
-			if (sw == 0) {
-				$('.popup_slick_btn').removeClass('popup_slick_pause');
-				$('.popup_slick_btn').addClass('popup_slick_play');
-				$('.popup_slick_track').slick('slickPlay')
-				sw = 1;
-			} else {
-				$('.popup_slick_btn').removeClass('popup_slick_play');
-				$('.popup_slick_btn').addClass('popup_slick_pause');
-				$('.popup_slick_track').slick('slickPause')
-				sw = 0;
-			}
-		});
-		$('.banner_slide_track').slick({
-			infinite: true,
-			speed: 500,
-			fade: true,
-			cssEase: 'linear',
-			prevArrow: $('.kinfa_contents_banner_slick_prev'),
-			nextArrow: $('.kinfa_contents_banner_slick_next'),
-			autoplay: true
-		});
-		$('.kinfa_contents_banner_slick_btn').click(function () {
-			if (sw == 0) {
-				$('.kinfa_contents_banner_slick_btn').removeClass('kinfa_contents_banner_slick_play');
-				$('.kinfa_contents_banner_slick_btn').addClass('kinfa_contents_banner_slick_pause');
-				$('.banner_slide_track').slick('slickPlay')
-				sw = 1;
-			} else {
-				$('.kinfa_contents_banner_slick_btn').removeClass('kinfa_contents_banner_slick_pause');
-				$('.kinfa_contents_banner_slick_btn').addClass('kinfa_contents_banner_slick_play');
-				$('.banner_slide_track').slick('slickPause')
-				sw = 0;
-			}
-		});
-		$('.sns_slide').slick({
-			dots: true,
-			infinite: true,
-			speed: 1000,
-			fade: false,
-			cssEase: 'linear',
-			autoplay: true,
-			autoplaySpeed: 2000,
-			arrows: false,
-		});
-		$('.you_prev').click(function () {
-			$('.you_slide').slick('slickPrev')
-		});
-		$('.you_btn').click(function () {
-			$('.you_slide').slick('slickPause')
-		});
-		$('.you_next').click(function () {
-			$('.you_slide').slick('slickNext')
-		});
-		$('.card_prev').click(function () {
-			$('.card_slide').slick('slickPrev')
-		});
-		$('.card_btn').click(function () {
-			$('.card_slide').slick('slickPause')
-		});
-		$('.card_next').click(function () {
-			$('.card_slide').slick('slickNext')
-		});
-
-		sw = 0;
-		$('.allmenu_icon').click(function () {
-			if (sw == 0) {
-				$('.plus_menu').addClass('plus_menu_active');
-				sw = 1;
-			} else {
-				$('.plus_menu').removeClass('plus_menu_active');
-				sw = 0;
-			}
-		});
-	</script> -->
 </body>
 
 </html>
