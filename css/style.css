@@ -5,7 +5,7 @@ li{list-style: none}
 a{text-decoration: none;}
 
 /* Layout */
-body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll; background: #ddd;}
+body{font-family: 'Noto Sans KR', sans-serif;}
 #wrap{width: 100%;}
 /* header */
 #header{width: 100%; height: 140px; position: relative;}
@@ -100,13 +100,12 @@ body{font-family: 'Noto Sans KR', sans-serif; overflow-y: scroll; background: #d
 /* header-bottom */
 .gnb{position: relative; background: #fff; width: 100%;}
 .gnb::before{content: ""; display: block; position: absolute; top: 60px; left: 0; width: 100%; height: 1px; border-bottom: 1px solid #d5d5d5;}
-#nav{}
-.menu{}
 .menu>ul{width: 1410px; margin: 0 auto; padding: 0 15px;}
 .menu>ul::after{content: ""; display: block; clear: both;}
 .menu>ul>li.dep1{float: left; width: 14.2%; position: relative; height: auto;}
 .menu>ul>li.dep1>a.dep1a{display: block; height: 60px; line-height: 60px; text-align: center; font-size: 19px; font-weight: 500;}
 .menu>ul>li.dep1>ul.dep_height{display: none; padding: 24px; border-right: 1px solid #d9d9d9;  min-height: 480px;} 
+.menu>ul:hover>li.dep1>ul.dep_height{display: block;}
 .menu>ul>li.dep1:hover>ul.dep_height{background: rgba(210, 228, 255, 0.311);}
 .menu>ul>li.dep1>ul.dep_height>li{padding: 6px 0; font-size: 16px; text-align: left; line-height: 21px;}
 .menu>ul>li.dep1>ul.dep_height>li>a{font-size: 17px; padding: 3px 0; color: #5c5c5c; line-height: 27px; display: block;}
@@ -384,6 +383,14 @@ background-size: 25px;}
 .sns_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
 .sns_btn.play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
 .sns_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center center; background-size: 15px;}
+.you_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center center; background-size: 15px; margin-right: 8px;}
+.you_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
+.you_btn.play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
+.you_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center center; background-size: 15px;}
+.card_prev{background: #c2c2c2 url(../img/icon/arrow-prev.png) no-repeat center center; background-size: 15px; margin-right: 8px;}
+.card_btn{background: #c2c2c2 url(../img/icon/stop.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
+.card_btn.play{background: #c2c2c2 url(../img/icon/play.png) no-repeat center center; background-size: 8px; margin-right: 8px;}
+.card_next{background: #c2c2c2 url(../img/icon/arrow-next.png) no-repeat center center; background-size: 15px;}
 
 /* kinfa_link_wrap */
 .kinfa_link_wrap{position: relative;}
@@ -413,15 +420,15 @@ background-size: 25px;}
 .kinfa_decal_rgb ul li{float: left; width: 33.3333%; padding: 15px; box-sizing: border-box;}
 .kinfa_decal_rgb ul li .kinfa_decal_box{background: #eaeaea; box-sizing: border-box; border-radius: 10px;}
 .kinfa_decal_rgb ul li a{display: block; text-align: center;}
-.kinfa_decal_box a{padding: 5px;  box-sizing: border-box; border-radius: 10px;}
+.kinfa_decal_box a{height: 100%; padding: 5px;  box-sizing: border-box; border-radius: 10px;}
 .kinfa_decal_box a:hover{background: #3351a7; transition: all 0.5s;}
 .kinfa_decal_box a:hover span{color: #fff; transition: all 0.5s;}
-.kinfa_decal_red
-.kinfa_decal_green
-.kinfa_decal_blue
+.kinfa_decal_red, .kinfa_decal_green, .kinfa_decal_blue{overflow: hidden; padding: 8px 0;}
 .kinfa_decal_rgb ul li a .img_box{width: 45px; height: 45px; border-radius: 45px; background: #fff; margin-left: 50px;}
-.img_box span{display: inline-block; color: #333; font-size: 1rem; position: relative; bottom: 10px;}
-.kinfa_decal_rgb ul li a .img_box img{width: 25px; padding: 5px 5px 5px 10px;}
+.kinfa_decal_red span{display: inline-block; color: #333; font-size: 1rem; position: relative; top: 10px; right: 49px;}
+.kinfa_decal_green span{display: inline-block; color: #333; font-size: 1rem; position: relative; top: 10px; right: 75px;}
+.kinfa_decal_blue span{display: inline-block; color: #333; font-size: 1rem; position: relative; top: 10px; right: 49px;}
+.kinfa_decal_rgb ul li a .img_box img{width: 25px; padding: 5px;}
 
 /* footer */
 /* menus */

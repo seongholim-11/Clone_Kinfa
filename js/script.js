@@ -35,7 +35,7 @@ moreBtnIcon.addEventListener('click', function () {
 })
 
 // 헤더 nav 메뉴
-const dep2a = document.querySelectorAll('#nav .dep2')
+/* const dep2a = document.querySelectorAll('#nav .dep2')
 const dep1 = document.querySelectorAll('#nav .dep1')
 const ul = document.querySelectorAll('#nav .dep1 .dep_height')
 const gnbHeight = document.querySelector('#gnb')
@@ -57,7 +57,7 @@ for (let i = 0; i < dep2a.length; i++) {
             li.style.height = max_h + "px";
         });
     })
-}
+} */
 
 // -----------------------------------------------------------------------------------
 
@@ -454,7 +454,7 @@ cbannerAutoSlide();
 
 // 자동슬라이드 함수 만들기
 function cbannerAutoSlide() {
-        // 스탑 버튼 활성화
+    // 스탑 버튼 활성화
     kinfa_contents_banner_btn.classList.remove('play')
     kinfa_contents_banner_btn.classList.add('stop')
     // 인터벌 시작
@@ -518,12 +518,12 @@ kinfa_contents_banner_prev.addEventListener('click', chandlePrevClick);
 
 const sns_you_slide = document.querySelector('.you_slide');
 const sns_card_slide = document.querySelector('.card_slide');
-const you_btn = document.querySelector('.you-bottom .sns_btn');
-const card_btn = document.querySelector('.card-bottom .sns_btn');
-const you_prev = document.querySelector('.you-bottom .sns_prev');
-const card_prev = document.querySelector('.card-bottom .sns_prev');
-const you_next = document.querySelector('.you-bottom .sns_next');
-const card_next = document.querySelector('.card-bottom .sns_next');
+const you_btn = document.querySelector('.you-bottom .you_btn');
+const card_btn = document.querySelector('.card-bottom .card_btn');
+const you_prev = document.querySelector('.you-bottom .you_prev');
+const card_prev = document.querySelector('.card-bottom .card_prev');
+const you_next = document.querySelector('.you-bottom .you_next');
+const card_next = document.querySelector('.card-bottom .card_next');
 const you_dot = document.querySelectorAll('.you-bottom .sns-dot li button');
 const card_dot = document.querySelectorAll('.card-bottom .sns-dot li button');
 let intervalSnsYou;
@@ -543,134 +543,271 @@ sns_card_slide.style.left = 0 + 'px';
 you_dot[0].classList.add('active')
 card_dot[0].classList.add('active')
 
-snsyouSlide()
+you()
+card()
 
-// snsSlide() 함수 만들기
-function snsyouSlide(idx) {
-    intervalSnsYou = setInterval(function () {
-        // syCount: 0~2까지 슬라이드 이동
-        syposition = (-676) * syCount;
-        youDotActive(syCount)
-        // 요소의 스타일 속성 변경
-        console.log("🚀 ~ file: script.js:553 ~ sCount:", syCount)
-        sns_you_slide.style.left = syposition + 'px';
-        // 다음 슬라이드를 위해 증가
-        syCount++
-        // 슬라이드가 끝나기 전에 처음으로 초기화
-        if (syCount >= 3) {
-            syCount = 0;
+function you() {
+    snsyouSlide()
+    // snsSlide() 함수 만들기
+    function snsyouSlide(idx) {
+        intervalSnsYou = setInterval(function () {
+            // syCount: 0~2까지 슬라이드 이동
+            syposition = (-676) * syCount;
+            youDotActive(syCount)
+            // 요소의 스타일 속성 변경
+            console.log("🚀 ~ file: script.js:553 ~ sCount:", syCount)
+            sns_you_slide.style.left = syposition + 'px';
+            // 다음 슬라이드를 위해 증가
+            syCount++
+            // 슬라이드가 끝나기 전에 처음으로 초기화
+            if (syCount >= 3) {
+                syCount = 0;
+            }
+        }, 3000);
+    }
+
+    // 정지, 재생 버튼 누르면
+    you_btn.addEventListener('click', function () {
+        // 재생되고 있으면
+        if (sns_you_btn_OnOff == 0) {
+            // 재생 모양으로 아이콘 바꾸기
+            you_btn.classList.add('play')
+            // 슬라이드 멈추기
+            clearInterval(intervalSnsYou);
+            // 상태 변경
+            sns_you_btn_OnOff = 1;
+            // 정지되어 있으면
+        } else {
+            // 정지 모양으로 아이콘 바꾸기
+            you_btn.classList.remove('play')
+            // 자동 슬라이드 시작
+            snsyouSlide()
+            sns_you_btn_OnOff = 0;
         }
-    }, 3000);
-}
+    })
 
-// 정지, 재생 버튼 누르면
-you_btn.addEventListener('click', function () {
-    // 재생되고 있으면
-    if (sns_you_btn_OnOff == 0) {
-        // 재생 모양으로 아이콘 바꾸기
-        you_btn.classList.add('play')
-        // 슬라이드 멈추기
+    // 마우스 올리면 정지, 내리면 재생
+    you_prev.addEventListener('mouseover', function () {
         clearInterval(intervalSnsYou);
-        // 상태 변경
-        sns_you_btn_OnOff = 1;
-        // 정지되어 있으면
-    } else {
-        // 정지 모양으로 아이콘 바꾸기
-        you_btn.classList.remove('play')
-        // 자동 슬라이드 시작
-        snsyouSlide()
-        // 상태 변경
-        sns_you_btn_OnOff = 0;
-    }
-})
+    })
+    you_prev.addEventListener('mouseout', function () {
+        snsyouSlide();
+    })
+    you_next.addEventListener('mouseover', function () {
+        clearInterval(intervalSnsYou);
+    })
+    you_next.addEventListener('mouseout', function () {
+        snsyouSlide();
+    })
 
-// 마우스 올리면 정지, 내리면 재생
-you_prev.addEventListener('mouseover', function () {
-    clearInterval(intervalSnsYou);
-})
-you_prev.addEventListener('mouseout', function () {
-    snsyouSlide();
-})
-you_next.addEventListener('mouseover', function () {
-    clearInterval(intervalSnsYou);
-})
-you_next.addEventListener('mouseout', function () {
-    snsyouSlide();
-})
-
-// 이전 버튼을 누르면
-you_prev.addEventListener('click', function () {
-    // 처음 첫화면에서 마지막화면으로 가기 위해서는 버튼을 2번 눌러야 하는 것을 방지
-    if (sns_you_prev_count == 0 && syCount == 1) {
-        // 마지막 화면으로 이동
-        syCount = 2
-        syposition = (-676) * syCount;
-        youDotActive(syCount)
-        sns_you_slide.style.left = syposition + 'px';
-        // 처음이 아님으로 변경
-        sns_you_prev_count = 1;
-    } else {
-        sns_you_prev_count = 1;
-        syCount--
-        syposition = (-676) * syCount;
-        // 첫 화면에서 버튼을 한 번 더 누르면 빈화면을 나오는 것을 방지
-        if (syposition > 0) {
-            syCount = 2;
+    // 이전 버튼을 누르면
+    you_prev.addEventListener('click', function () {
+        // 처음 첫화면에서 마지막화면으로 가기 위해서는 버튼을 2번 눌러야 하는 것을 방지
+        if (sns_you_prev_count == 0 && syCount == 1) {
+            // 마지막 화면으로 이동
+            syCount = 2
             syposition = (-676) * syCount;
-        }
-        // 화면 이동
-        youDotActive(syCount)
-        sns_you_slide.style.left = syposition + 'px';
+            youDotActive(syCount)
+            sns_you_slide.style.left = syposition + 'px';
+            // 처음이 아님으로 변경
+            sns_you_prev_count = 1;
+        } else {
+            sns_you_prev_count = 1;
+            syCount--
+            syposition = (-676) * syCount;
+            // 첫 화면에서 버튼을 한 번 더 누르면 빈화면을 나오는 것을 방지
+            if (syposition > 0) {
+                syCount = 2;
+                syposition = (-676) * syCount;
+            }
+            // 화면 이동
+            youDotActive(syCount)
+            sns_you_slide.style.left = syposition + 'px';
 
-        // // 첫 화면에서 버튼을 한 번 더 누르면 마지막 화면으로 이동
-        if (syCount <= -1) {
+            // // 첫 화면에서 버튼을 한 번 더 누르면 마지막 화면으로 이동
+            if (syCount <= -1) {
+                syCount = 1;
+            }
+        }
+
+    })
+
+    you_next.addEventListener('click', function () {
+        // 처음 2번째 화면으로 안 넘어가는 것을 방지
+        if (sns_you_next_count == 0 && syCount == 1) {
             syCount = 1;
-        }
-    }
-
-})
-
-you_next.addEventListener('click', function () {
-    // 처음 2번째 화면으로 안 넘어가는 것을 방지
-    if (sns_you_next_count == 0 && syCount == 1) {
-        syCount = 1;
-        youDotActive(syCount)
-        syposition = (-676) * syCount;
-        sns_you_slide.style.left = syposition + 'px';
-        sns_you_next_count = 1
-    } else {
-        syCount++
-        syposition = (-676) * syCount;
-        // 마지막 화면에서 화면이 더 넘어가는 것을 방지
-        if (syposition < -1352) {
-            syCount = 0;
-            syposition = (-676) * syCount;
-        }
-        youDotActive(syCount)
-        sns_you_slide.style.left = syposition + 'px';
-
-        // 마지막 화면에서 한 번 더 누르면 첫 화면으로 이동
-        if (syCount >= 3) {
-            syCount = 0;
-        }
-    }
-})
-
-function youDotActive(idx){
-    for(let i = 0; i < you_dot.length; i++){
-        you_dot[i].classList.remove('active')
-    }
-    you_dot[idx].classList.add('active')
-}
-
-youDotClick()
-function youDotClick(){
-    for(let j = 0; j < you_dot.length; j++){
-        you_dot[j].addEventListener('click' ,function(){
-            syCount = j
+            youDotActive(syCount)
             syposition = (-676) * syCount;
             sns_you_slide.style.left = syposition + 'px';
-            youDotActive(j)
-        })
+            sns_you_next_count = 1
+        } else {
+            sns_you_next_count = 1
+            syCount++
+            syposition = (-676) * syCount;
+            // 마지막 화면에서 화면이 더 넘어가는 것을 방지
+            if (syposition < -1352) {
+                syCount = 0;
+                syposition = (-676) * syCount;
+            }
+            youDotActive(syCount)
+            sns_you_slide.style.left = syposition + 'px';
+
+            // 마지막 화면에서 한 번 더 누르면 첫 화면으로 이동
+            if (syCount >= 3) {
+                syCount = 0;
+            }
+        }
+    })
+
+    function youDotActive(idx) {
+        for (let i = 0; i < you_dot.length; i++) {
+            you_dot[i].classList.remove('active')
+        }
+        you_dot[idx].classList.add('active')
+    }
+
+    youDotClick()
+    function youDotClick() {
+        for (let j = 0; j < you_dot.length; j++) {
+            you_dot[j].addEventListener('click', function () {
+                syCount = j
+                syposition = (-676) * syCount;
+                sns_you_slide.style.left = syposition + 'px';
+                youDotActive(j)
+            })
+        }
+    }
+}
+
+function card() {
+    snscardSlide()
+    // snsSlide() 함수 만들기
+    function snscardSlide(idx) {
+        intervalSnsCard = setInterval(function () {
+            // scCount: 0~2까지 슬라이드 이동
+            scposition = (-676) * scCount;
+            cardDotActive(scCount)
+            // 요소의 스타일 속성 변경
+            console.log("🚀 ~ file: script.js:553 ~ sCount:", scCount)
+            sns_card_slide.style.left = scposition + 'px';
+            // 다음 슬라이드를 위해 증가
+            scCount++
+            // 슬라이드가 끝나기 전에 처음으로 초기화
+            if (scCount >= 3) {
+                scCount = 0;
+            }
+        }, 3000);
+    }
+
+    // 정지, 재생 버튼 누르면
+    card_btn.addEventListener('click', function () {
+        // 재생되고 있으면
+        if (sns_card_btn_OnOff == 0) {
+            // 재생 모양으로 아이콘 바꾸기
+            card_btn.classList.add('play')
+            // 슬라이드 멈추기
+            clearInterval(intervalSnsCard);
+            // 상태 변경
+            sns_card_btn_OnOff = 1;
+            // 정지되어 있으면
+        } else {
+            // 정지 모양으로 아이콘 바꾸기
+            card_btn.classList.remove('play')
+            // 자동 슬라이드 시작
+            snscardSlide()
+            sns_card_btn_OnOff = 0;
+        }
+    })
+
+    // 마우스 올리면 정지, 내리면 재생
+    card_prev.addEventListener('mouseover', function () {
+        clearInterval(intervalSnsCard);
+    })
+    card_prev.addEventListener('mouseout', function () {
+        snscardSlide();
+    })
+    card_next.addEventListener('mouseover', function () {
+        clearInterval(intervalSnsCard);
+    })
+    card_next.addEventListener('mouseout', function () {
+        snscardSlide();
+    })
+
+    // 이전 버튼을 누르면
+    card_prev.addEventListener('click', function () {
+        // 처음 첫화면에서 마지막화면으로 가기 위해서는 버튼을 2번 눌러야 하는 것을 방지
+        if (sns_card_prev_count == 0 && scCount == 1) {
+            // 마지막 화면으로 이동
+            scCount = 2
+            scposition = (-676) * scCount;
+            cardDotActive(scCount)
+            sns_card_slide.style.left = scposition + 'px';
+            // 처음이 아님으로 변경
+            sns_card_prev_count = 1;
+        } else {
+            sns_card_prev_count = 1;
+            scCount--
+            scposition = (-676) * scCount;
+            // 첫 화면에서 버튼을 한 번 더 누르면 빈화면을 나오는 것을 방지
+            if (scposition < 0) {
+                scCount = 2;
+                scposition = (-676) * scCount;
+            }
+            // 화면 이동
+            cardDotActive(scCount)
+            sns_card_slide.style.left = scposition + 'px';
+
+            // // 첫 화면에서 버튼을 한 번 더 누르면 마지막 화면으로 이동
+            if (scCount <= -1) {
+                scCount = 1;
+            }
+        }
+
+    })
+
+    card_next.addEventListener('click', function () {
+        // 처음 2번째 화면으로 안 넘어가는 것을 방지
+        if (sns_card_next_count == 0 && scCount == 1) {
+            scCount = 1;
+            cardDotActive(scCount)
+            scposition = (-676) * scCount;
+            sns_card_slide.style.left = scposition + 'px';
+            sns_card_next_count = 1
+        } else {
+            sns_card_next_count = 1
+            scCount++
+            scposition = (-676) * scCount;
+            // 마지막 화면에서 화면이 더 넘어가는 것을 방지
+            if (scposition  -1352) {
+                scCount = 0;
+                scposition = (-676) * scCount;
+            }
+            cardDotActive(scCount)
+            sns_card_slide.style.left = scposition + 'px';
+
+            // 마지막 화면에서 한 번 더 누르면 첫 화면으로 이동
+            if (scCount >= 3) {
+                scCount = 0;
+            }
+        }
+    })
+
+    function cardDotActive(idx) {
+        for (let i = 0; i < card_dot.length; i++) {
+            card_dot[i].classList.remove('active')
+        }
+        card_dot[idx].classList.add('active')
+    }
+
+    cardDotClick()
+    function cardDotClick() {
+        for (let j = 0; j < card_dot.length; j++) {
+            card_dot[j].addEventListener('click', function () {
+                scCount = j
+                scposition = (-676) * scCount;
+                sns_card_slide.style.left = scposition + 'px';
+                cardDotActive(j)
+            })
+        }
     }
 }
