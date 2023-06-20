@@ -35,29 +35,37 @@ moreBtnIcon.addEventListener('click', function () {
 })
 
 // 헤더 nav 메뉴
-/* const dep2a = document.querySelectorAll('#nav .dep2')
+const dep2a = document.querySelectorAll('#nav .dep2>a')
 const dep1 = document.querySelectorAll('#nav .dep1')
-const ul = document.querySelectorAll('#nav .dep1 .dep_height')
+const dep1ul = document.querySelectorAll('#nav .dep1 .dep_height')
+const dep2li = document.querySelectorAll('#nav .dep2')
+const dep2ul = document.querySelectorAll('#nav .dep2 ul')
 const gnbHeight = document.querySelector('#gnb')
+
+let maxNum = 0;
 
 
 for (let i = 0; i < dep2a.length; i++) {
-    dep2a[i].addEventListener('mouseover', function () {
-        var max_h = 0;
-        this.lastElementChild.classList.add('active');
-        dep1.forEach(function (li) {
-            var h = parseInt(getComputedStyle(li).height);
-
-            if (max_h < h) {
-                max_h = h;
+    dep2li[i].addEventListener('mouseover', function () {
+        dep2ul[i].style.display = 'block';
+        for(let j = 0; j < dep1.length; j++){
+            if (dep1[j].offsetHeight > maxNum && dep1[j].offsetHeight < 800) {
+                maxNum = dep1[j].offsetHeight;
             }
-        });
-
-        dep1.forEach(function (li) {
-            li.style.height = max_h + "px";
-        });
+            dep1ul[j].style.height = (maxNum - 60) + "px";
+        }
     })
-} */
+    dep2li[i].addEventListener('mouseout', function () {
+        dep2ul[i].style.display = 'none';
+        for(let j = 0; j < dep1.length; j++){
+            if (dep1[j].offsetHeight < minNum && dep1[j].offsetHeight < 800) {
+                minNum = dep1[j].offsetHeight;
+            }
+            dep1ul[j].style.height = (minNum - 60) + "px";
+        }
+    })
+}
+
 
 // -----------------------------------------------------------------------------------
 
@@ -555,7 +563,6 @@ function you() {
             syposition = (-676) * syCount;
             youDotActive(syCount)
             // 요소의 스타일 속성 변경
-            console.log("🚀 ~ file: script.js:553 ~ sCount:", syCount)
             sns_you_slide.style.left = syposition + 'px';
             // 다음 슬라이드를 위해 증가
             syCount++
@@ -688,7 +695,6 @@ function card() {
             scposition = (-676) * scCount;
             cardDotActive(scCount)
             // 요소의 스타일 속성 변경
-            console.log("🚀 ~ file: script.js:553 ~ sCount:", scCount)
             sns_card_slide.style.left = scposition + 'px';
             // 다음 슬라이드를 위해 증가
             scCount++
@@ -778,7 +784,7 @@ function card() {
             scCount++
             scposition = (-676) * scCount;
             // 마지막 화면에서 화면이 더 넘어가는 것을 방지
-            if (scposition  -1352) {
+            if (scposition - 1352) {
                 scCount = 0;
                 scposition = (-676) * scCount;
             }
