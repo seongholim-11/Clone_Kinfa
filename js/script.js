@@ -48,7 +48,7 @@ let maxNum = 0;
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function () {
         dep2ul[i].style.display = 'block';
-        for(let j = 0; j < dep1.length; j++){
+        for (let j = 0; j < dep1.length; j++) {
             if (dep1[j].offsetHeight > maxNum && dep1[j].offsetHeight < 800) {
                 maxNum = dep1[j].offsetHeight;
             }
@@ -57,7 +57,7 @@ for (let i = 0; i < dep2a.length; i++) {
     })
     dep2li[i].addEventListener('mouseout', function () {
         dep2ul[i].style.display = 'none';
-        for(let j = 0; j < dep1.length; j++){
+        for (let j = 0; j < dep1.length; j++) {
             if (dep1[j].offsetHeight < minNum && dep1[j].offsetHeight < 800) {
                 minNum = dep1[j].offsetHeight;
             }
@@ -817,3 +817,32 @@ function card() {
         }
     }
 }
+
+// 네이버 맵
+
+var HOME_PATH = window.HOME_PATH || '.';
+var positions = new naver.maps.LatLng(37.5578721, 126.974262);
+
+var mapOptions = {
+    center: new naver.maps.LatLng(37.5578721, 126.974262),
+    scaleControl: false,
+    logoControl: false,
+    mapDataControl: false,
+    zoomControl: true,
+    minZoom: 6
+};
+
+var map = new naver.maps.Map('map', mapOptions);
+
+var markerOptions = {
+    position: positions.destinationPoint(0, 0),
+    map: map,
+    icon: {
+        url: HOME_PATH + '/img/where.png',
+        size: new naver.maps.Size(100, 60),
+        origin: new naver.maps.Point(0, 0),
+        anchor: new naver.maps.Point(25, 26)
+    }
+};
+
+var marker = new naver.maps.Marker(markerOptions);
