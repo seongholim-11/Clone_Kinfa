@@ -44,6 +44,10 @@
 		rel="stylesheet">
 
 	<script src="./js/script.js" defer></script>
+	<!-- 외부 지도 API 로드 -->
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=z2tv3cv252"></script>
+    <!-- 네이버 지도 API를 가져옴 -->
 
 
 
@@ -1041,6 +1045,12 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div id="nMap">
+					<h2 style="margin-bottom: 30px; font-weight: bold; padding-left: 225px;">서민금융진흥원 위치</h2>
+					<div id="map" style="width:65%; height:400px; margin: 0 auto;"></div>
 				</div>
 			</div>
 		</main>
