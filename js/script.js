@@ -43,25 +43,33 @@ const dep2ul = document.querySelectorAll('#nav .dep2 ul')
 const gnbHeight = document.querySelector('#gnb')
 
 let maxNum = 0;
+let minNum = 0;
 
 
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function () {
         dep2ul[i].style.display = 'block';
-        for (let j = 0; j < dep1.length; j++) {
-            if (dep1[j].offsetHeight > maxNum && dep1[j].offsetHeight < 800) {
-                maxNum = dep1[j].offsetHeight;
+        dep1ul.forEach(dep1ul => {
+            dep1ul.style.height = 'auto';
+        });
+        dep1ul.forEach(dep1ul => {
+            const ulHeight = dep1ul.offsetHeight;
+            if (ulHeight > maxNum) {
+                maxNum = ulHeight;
             }
-            dep1ul[j].style.height = (maxNum - 60) + "px";
-        }
+        });
+        dep1ul.forEach(dep1ul => {
+            dep1ul.style.height = `${maxNum}px`;
+        });
     })
+
     dep2li[i].addEventListener('mouseout', function () {
         dep2ul[i].style.display = 'none';
         for (let j = 0; j < dep1.length; j++) {
             if (dep1[j].offsetHeight < minNum && dep1[j].offsetHeight < 800) {
                 minNum = dep1[j].offsetHeight;
             }
-            dep1ul[j].style.height = (minNum - 60) + "px";
+            dep1ul[j].style.height = minNum + "px";
         }
     })
 }
