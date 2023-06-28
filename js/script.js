@@ -46,7 +46,20 @@ let maxNum = 0;
 let minNum = 0;
 let filtered;
 
+/* 
+    모든 ul non
+    dep1    .nonactive
+    dep2ul  none
 
+    hover만 block
+    dep1    .active
+    dep2ul  block
+
+
+
+
+    
+*/
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function () {
         dep2ul[i].classList.add('active')
@@ -55,7 +68,7 @@ for (let i = 0; i < dep2a.length; i++) {
         for (let j = 0; j < filtered.length; j++) {
             let NonActivedep2ul = filtered[j].querySelectorAll('#nav .dep2 ul')
             for(let k = 0; k < NonActivedep2ul.length; k++){
-                NonActivedep2ul[k]
+                NonActivedep2ul[k].classList.remove('active')
             }
 
         }
