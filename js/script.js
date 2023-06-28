@@ -44,12 +44,22 @@ const gnbHeight = document.querySelector('#gnb')
 
 let maxNum = 0;
 let minNum = 0;
+let filtered;
 
 
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function () {
-        dep2ul[i].style.display = 'block';
-        dep1ul.forEach(dep1ul => {
+        dep2ul[i].classList.add('active')
+        dep2ul[i].closest('#nav .dep1').classList.add('active')
+        filtered = not('#nav .dep1.active');
+        for (let j = 0; j < filtered.length; j++) {
+            let NonActivedep2ul = filtered[j].querySelectorAll('#nav .dep2 ul')
+            for(let k = 0; k < NonActivedep2ul.length; k++){
+                NonActivedep2ul[k]
+            }
+
+        }
+        /* dep1ul.forEach(dep1ul => {
             dep1ul.style.height = 'auto';
         });
         dep1ul.forEach(dep1ul => {
@@ -60,17 +70,36 @@ for (let i = 0; i < dep2a.length; i++) {
         });
         dep1ul.forEach(dep1ul => {
             dep1ul.style.height = `${maxNum}px`;
-        });
+        }); */
     })
 
-    dep2li[i].addEventListener('mouseout', function () {
-        dep2ul[i].style.display = 'none';
+    function not(selector) {
+        // 모든 요소를 선택합니다.
+        var elements = document.querySelectorAll('#nav .dep1')
+        
+        // 선택된 요소 중에서 지정된 선택자에 맞지 않는 요소를 필터링합니다.
+        var filteredElements = Array.from(elements).filter(function(element) {
+            return !element.matches(selector);
+        });
+        
+        // 필터링된 요소들을 반환합니다.
+        return filteredElements;
+      }
+      
+      // 사용 예시
+
+    
+    dep2li[i].parentNode.addEventListener('mouseout', function () {
+        // dep2ul[i].classList.remove('active')
+        /* dep1ul.forEach(dep1ul => {
+            dep1ul.style.height = 'auto';
+        });
         for (let j = 0; j < dep1.length; j++) {
-            if (dep1[j].offsetHeight < minNum && dep1[j].offsetHeight < 800) {
+            if (dep1[j].offsetHeight < minNum) {
                 minNum = dep1[j].offsetHeight;
             }
             dep1ul[j].style.height = minNum + "px";
-        }
+        } */
     })
 }
 

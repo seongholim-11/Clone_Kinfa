@@ -57,7 +57,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 /* plus_menu */
 .plus_menu{width: 100%; position: absolute; top: 78px; left: 0; background: rgb(255, 255, 255); z-index: 99; border-top: 1px solid #ddd; display: none;}
 .plus_menu_ul{padding-left: 18px;}
-.plus_menu ul>li.dep1{display: block; float: left; width: 14.2%; text-align: center; padding: 1rem; box-sizing: border-box; min-height: 840px;}
+.plus_menu ul>li.dep1{display: block; float: left; width: 14.2%; text-align: center; padding: 1rem; box-sizing: border-box; min-height: 800px;}
 .plus_menu ul>li.dep1:not(:last-child){border-right: 1px solid #ddd;}
 .plus_menu ul>li.dep1>a{display: block; font-size: 1.2rem; font-weight: 700; text-align: center; margin-bottom: 1rem;}
 .plus_menu ul>li.dep1:hover>a{color: #3351a7;}
@@ -104,14 +104,14 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .menu>ul::after{content: ""; display: block; clear: both;}
 .menu>ul>li.dep1{float: left; width: 14.2%; position: relative; height: auto;}
 .menu>ul>li.dep1>a.dep1a{display: block; height: 60px; line-height: 60px; text-align: center; font-size: 19px; font-weight: 500;}
-.menu>ul>li.dep1>ul.dep_height{display: none; padding: 24px; border-right: 1px solid #d9d9d9;  min-height: 460px;} 
+.menu>ul>li.dep1>ul.dep_height{display: none; padding: 24px; border-right: 1px solid #d9d9d9;  /* min-height: 400px; */ height: calc( 100% - 56px );} 
 .menu>ul:hover>li.dep1>ul.dep_height{display: block;}
 .menu>ul>li.dep1:hover>ul.dep_height{background: rgba(210, 228, 255, 0.311);}
 .menu>ul>li.dep1>ul.dep_height>li{padding: 6px 0; font-size: 16px; text-align: left; line-height: 21px;}
 .menu>ul>li.dep1>ul.dep_height>li>a{font-size: 17px; padding: 3px 0; color: #5c5c5c; line-height: 27px; display: block;}
 .menu>ul>li>ul>li.dep2>a{background: url(../img/icon/icon_small_down.png) no-repeat right center;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul{display: none; background: #f5f5f5; padding: 0 8px; margin: 0 -24px; border-top: 1px solid #053982;}
-.menu>ul>li.dep1>ul.dep_height>li.dep2>ul.active{display: block; border-top: 3px solid #053982;}
+.menu>ul>li.dep1.active>ul.dep_height>li.dep2>ul{display: block; border-top: 3px solid #053982;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li:first-child{padding-top: 8px;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li:last-child{padding-bottom: 8px;}
 .menu>ul>li.dep1>ul.dep_height>li.dep2>ul>li>a{display: block; padding: 8px 24px; font-size: 17px; line-height: 24px; text-indent: -8px; font-weight: normal;}
