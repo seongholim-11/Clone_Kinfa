@@ -42,74 +42,36 @@ const dep2li = document.querySelectorAll('#nav .dep2')
 const dep2ul = document.querySelectorAll('#nav .dep2 ul')
 const gnbHeight = document.querySelector('#gnb')
 
-let maxNum = 0;
-let minNum = 0;
-let filtered;
-
-/* 
-    모든 ul non
-    dep1    .nonactive
-    dep2ul  none
-
-    hover만 block
-    dep1    .active
-    dep2ul  block
-*/
-
+let liIdxArray = [];
+let liIdx = 0;
+let confirm;
 
 for (let i = 0; i < dep2a.length; i++) {
-    dep2li[i].addEventListener('mouseover', function () {
-        dep2ul[i].classList.add('active')
-        dep2ul[i].closest('#nav .dep1').classList.add('active')
-        filtered = not('#nav .dep1.active');
-        for (let j = 0; j < filtered.length; j++) {
-            let NonActivedep2ul = filtered[j].querySelectorAll('#nav .dep2 ul')
-            for(let k = 0; k < NonActivedep2ul.length; k++){
-                NonActivedep2ul[k].classList.remove('active')
+    dep2li[i].addEventListener('mouseover', function (event) {
+        let parentLi = event.target.closest('#nav .dep1');
+        liIdx = Array.from(parentLi.parentNode.children).indexOf(parentLi);
+        liIdxArray.push(liIdx);
+        console.log("🚀 ~ file: script.js:68 ~ liIdxArray:", liIdxArray)
+        for (let i = 1; i < liIdxArray.length; i++) {
+            if (liIdxArray[i] !== liIdxArray[0]) {
+                liIdxArray = [];
+                confirm = false; // 배열 요소가 다른 경우 false를 반환합니다.
+            } else {
+                confirm = true;
+            }
+        }
+        if (confirm == true) {
+            if(event.target.nextElementSibling){
+                event.target.nextElementSibling.classList.add('active');
+            }
+
+        } else {
+            for (let i = 0; i < dep2ul.length; i++) {
+                dep2ul[i].classList.remove('active');
+                event.target.nextElementSibling.classList.add('active');
             }
 
         }
-        /* dep1ul.forEach(dep1ul => {
-            dep1ul.style.height = 'auto';
-        });
-        dep1ul.forEach(dep1ul => {
-            const ulHeight = dep1ul.offsetHeight;
-            if (ulHeight > maxNum) {
-                maxNum = ulHeight;
-            }
-        });
-        dep1ul.forEach(dep1ul => {
-            dep1ul.style.height = `${maxNum}px`;
-        }); */
-    })
-
-    function not(selector) {
-        // 모든 요소를 선택합니다.
-        var elements = document.querySelectorAll('#nav .dep1')
-        
-        // 선택된 요소 중에서 지정된 선택자에 맞지 않는 요소를 필터링합니다.
-        var filteredElements = Array.from(elements).filter(function(element) {
-            return !element.matches(selector);
-        });
-        
-        // 필터링된 요소들을 반환합니다.
-        return filteredElements;
-      }
-      
-      // 사용 예시
-
-    
-    dep2li[i].parentNode.addEventListener('mouseout', function () {
-        // dep2ul[i].classList.remove('active')
-        /* dep1ul.forEach(dep1ul => {
-            dep1ul.style.height = 'auto';
-        });
-        for (let j = 0; j < dep1.length; j++) {
-            if (dep1[j].offsetHeight < minNum) {
-                minNum = dep1[j].offsetHeight;
-            }
-            dep1ul[j].style.height = minNum + "px";
-        } */
     })
 }
 
