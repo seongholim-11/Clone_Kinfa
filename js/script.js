@@ -45,6 +45,8 @@ const gnbHeight = document.querySelector('#gnb')
 let liIdxArray = [];
 let liIdx = 0;
 let confirm;
+let maxNum = 0;
+let minNum = 0;
 
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function (event) {
@@ -61,17 +63,30 @@ for (let i = 0; i < dep2a.length; i++) {
             }
         }
         if (confirm == true) {
-            if(event.target.nextElementSibling){
+            if (event.target.nextElementSibling) {
                 event.target.nextElementSibling.classList.add('active');
             }
 
         } else {
             for (let i = 0; i < dep2ul.length; i++) {
                 dep2ul[i].classList.remove('active');
-                event.target.nextElementSibling.classList.add('active');
+                if (event.target.nextElementSibling) {
+                    event.target.nextElementSibling.classList.add('active');
+                }
             }
 
         }
+        dep1ul.forEach(dep1ul => {
+            dep1ul.style.height = 'auto';
+        })
+
+        dep1ul.forEach(dep1ul => {
+            let ulHeight = dep1ul.offsetHeight;
+            if (ulHeight > maxNum) {
+                maxNum = ulHeight;
+            }
+            dep1ul.style.height = `${maxNum}px`;
+        })
     })
 }
 
@@ -194,20 +209,20 @@ for (let i = 0; i < banner_dot.length; i++) {
 // 위 코드 최적화 
 /* const banner_track = document.querySelector('.banner_track')
 const banner_slide = document.querySelectorAll('.banner_slide')
-
+ 
 const banner_dot = document.querySelectorAll('ul.slide-dot li button')
 banner_dot[0].classList.add('active')
-
+ 
 const banner_prev = document.querySelector('.main_visual_prev')
 const banner_next = document.querySelector('.main_visual_next')
-
+ 
 let bannerInterval = 0;
 let bannerIndex = 0;
 let i = 0;
 let idx = 0;
-
+ 
 bannerAutoSlide()
-
+ 
 function bannerAutoSlide() {
     setTimeout(function () {
         for (let j = 0; j < banner_slide.length; j++) {
@@ -216,7 +231,7 @@ function bannerAutoSlide() {
                 bannerIndex = j;
             }
         }
-
+ 
         banner_slide.forEach(element => {
             element.classList.remove('active')
         });
@@ -235,7 +250,7 @@ function bannerAutoSlide() {
                 bannerIndex = j;
             }
         }
-
+ 
         banner_slide.forEach(element => {
             element.classList.remove('active')
         });
@@ -248,7 +263,7 @@ function bannerAutoSlide() {
         banner_dot[bannerIndex].classList.add('active')
     }, 6000)
 }
-
+ 
 banner_next.addEventListener('mouseover', function () {
     clearInterval(bannerInterval)
 })
@@ -261,8 +276,8 @@ banner_prev.addEventListener('mouseover', function () {
 banner_prev.addEventListener('mouseout', function () {
     bannerAutoSlide()
 })
-
-
+ 
+ 
 banner_next.addEventListener('click', function () {
     for (let j = 0; j < banner_slide.length; j++) {
         let classes = banner_slide[j].classList;
@@ -281,7 +296,7 @@ banner_next.addEventListener('click', function () {
     banner_dot[bannerIndex].classList.add('active')
     banner_slide[bannerIndex].classList.add('active')
 })
-
+ 
 banner_prev.addEventListener('click', function () {
     for (let j = 0; j < banner_slide.length; j++) {
         let classes = banner_slide[j].classList;
@@ -300,7 +315,7 @@ banner_prev.addEventListener('click', function () {
     banner_dot[bannerIndex].classList.add('active')
     banner_slide[bannerIndex].classList.add('active')
 })
-
+ 
 function dot_click(idx) {
     banner_dot[idx].onclick = function () {
         banner_slide.forEach(element => {
@@ -313,7 +328,7 @@ function dot_click(idx) {
         banner_dot[idx].classList.add('active')
     };
 }
-
+ 
 for (let k = 0; k < banner_dot.length; k++) {
     dot_click(k);
     banner_dot[k].addEventListener('mouseover', function () {
