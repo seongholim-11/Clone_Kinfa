@@ -54,12 +54,9 @@ let filtered;
     hover만 block
     dep1    .active
     dep2ul  block
-
-
-
-
-    
 */
+
+
 for (let i = 0; i < dep2a.length; i++) {
     dep2li[i].addEventListener('mouseover', function () {
         dep2ul[i].classList.add('active')
