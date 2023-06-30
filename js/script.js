@@ -38,6 +38,7 @@ moreBtnIcon.addEventListener('click', function () {
 const dep2a = document.querySelectorAll('#nav .dep2>a')
 const dep1 = document.querySelectorAll('#nav .dep1')
 const dep1ul = document.querySelectorAll('#nav .dep1 .dep_height')
+const li = document.querySelectorAll('#nav .dep1 .dep_height li')
 const dep2li = document.querySelectorAll('#nav .dep2')
 const dep2ul = document.querySelectorAll('#nav .dep2 ul')
 const gnbHeight = document.querySelector('#gnb')
@@ -76,19 +77,32 @@ for (let i = 0; i < dep2a.length; i++) {
             }
 
         }
-        dep1ul.forEach(dep1ul => {
-            dep1ul.style.height = 'auto';
-        })
-
-        dep1ul.forEach(dep1ul => {
-            let ulHeight = dep1ul.offsetHeight;
-            if (ulHeight > maxNum) {
-                maxNum = ulHeight;
-            }
-            dep1ul.style.height = `${maxNum}px`;
-        })
-    })
+        
+    });
 }
+for (let i = 0; i < dep1ul.length; i++) {
+    dep1ul[i].addEventListener('mouseover', function (event) {
+        // 가장 긴 길이를 찾습니다.
+        maxDep1ulHeight = 0;
+        for (let i = 0; i < dep1ul.length; i++) {
+            if (dep1ul[i].offsetHeight > maxDep1ulHeight) {
+                maxDep1ulHeight = dep1ul[i].offsetHeight;
+            }
+        }
+
+        // 모든 dep1ul의 길이를 통일합니다.
+        for (let i = 0; i < dep1ul.length; i++) {
+            dep1ul[i].style.height = maxDep1ulHeight + 'px';
+        }
+    });
+    dep1ul[i].addEventListener('mouseout', function (event) {
+        // 원래 길이로 되돌립니다.
+        for (let j = 0; j < dep1ul.length; j++) {
+            dep1ul[j].style.height = 'auto';
+        }
+    });
+}
+
 
 
 // -----------------------------------------------------------------------------------
