@@ -76,7 +76,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .plus_menu_sitemap li a img{width: 25px; height: 25px; position: absolute; top: 7px; right: -5px;}
 
 /* header-bottom */
-.gnb{position: absolute; background: #fff; width: 100%; top: 79px; left: 0; z-index: 999999;}
+.gnb{position: absolute; background: #fff; width: 100%; top: 79px; left: 0; z-index: 999999; border-bottom: 1px solid #eee;}
 .gnb::before{content: ""; display: block; position: absolute; top: 60px; left: 0; width: 100%; height: 1px; border-bottom: 1px solid #d5d5d5;}
 .menu>ul{width: 1410px; margin: 0 auto; padding: 0 15px;}
 .menu>ul::after{content: ""; display: block; clear: both;}
