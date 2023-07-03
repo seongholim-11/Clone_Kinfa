@@ -35,6 +35,7 @@
         rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/script.js" defer></script>
 
 </head>
 
@@ -1171,47 +1172,4 @@
             </div>
         </footer>
     </div>
-    <script>
-        jQuery(function ($) {
-            $(".menu>ul>li>ul>li>a").on("mouseover focus", function () {
-                $(this).parent().addClass("active").siblings().removeClass("active");;
-            });
-            /* $(".menu>ul>li>ul>li").on("mouseover focus", function () {
-                $(".dep2").parents().siblings().addClass("close");
-            }); */
-        });
-
-        jQuery(function ($) {
-            $(".dep1").on("mouseover focus", function () {
-                let a = 0;
-                a = $(".menu>ul>li>.dep_height").innerHeight();
-                $('.bg').height(a);
-            });
-            $(".dep1").on("mouseout", function () {
-                $('.bg').height(0);
-            });
-        });
-        sw = 0;
-        $('.allmenu_icon').click(function () {
-            if (sw == 0) {
-                $('.plus_menu').addClass('plus_menu_active');
-                sw = 1;
-            } else {
-                $('.plus_menu').removeClass('plus_menu_active');
-                sw = 0;
-            }
-        });
-
-        // 페이지 내의 탭 안의 탭
-        $('.aSubTabMenu').on({
-            'click': function () {
-                $('.aSubTabMenu').removeClass('active');
-                $(this).addClass('active');
-                $('.aSubTabMenu').removeAttr('title');
-                $(this).attr('title', '선택됨');
-                $('.tab_content').css('display', 'none');
-                $('.tab_content').eq($('.aSubTabMenu').index(this)).css('display', 'block');
-            }
-        });
-    </script>
 </body>
