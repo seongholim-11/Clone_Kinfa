@@ -819,7 +819,7 @@ function card() {
     }
 }
 
-// 네이버 맵
+/* // 네이버 맵
 
 var HOME_PATH = window.HOME_PATH || '.';
 var positions = new naver.maps.LatLng(37.5578721, 126.974262);
@@ -846,4 +846,4 @@ var markerOptions = {
     }
 };
 
-var marker = new naver.maps.Marker(markerOptions);
+var marker = new naver.maps.Marker(markerOptions); */
